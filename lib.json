@@ -206,12 +206,12 @@
             "external": true
           },
           {
-            "label": "+91 96081 22203",
-            "href": "tel:+919608122203"
+            "label": "+91 96081 33303",
+            "href": "tel:+919608133303"
           },
           {
             "label": "Chat on WhatsApp",
-            "href": "https://wa.me/919608122203",
+            "href": "https://wa.me/919608133303",
             "style": "whatsapp",
             "external": true
           }
