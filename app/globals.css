@@ -42,3 +42,5 @@ html{scrollbar-width:thin;scrollbar-color:var(--green-soft) var(--paper-dim)}
 @media(prefers-reduced-motion:reduce){:is(h1:not(.hero-image-title),h2,h3,h4,.hero-subtitle,.about-label){transition:none}}
 
 :is(h1:not(.hero-image-title),h2,h3,h4,.hero-subtitle,.about-label){color:var(--heading-gold)}
+.site-header .brand-symbol{width:48px;height:48px}
+@media(max-width:520px){.site-header .brand-symbol{width:42px;height:42px}}
