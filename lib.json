@@ -5,14 +5,32 @@
   },
   "theme": {
     "light": {
-      "--paper": "#FFFFFF", "--paper-dim": "#F7F8F6", "--ink": "#1A1A1A", "--ink-soft": "#505A54",
-      "--navy": "#0B3D2E", "--navy-soft": "#BF9B30", "--clay": "#0B3D2E", "--clay-soft": "#BF9B30",
-      "--green": "#0B3D2E", "--green-soft": "#27604D", "--line": "#BF9B30", "--white": "#FFFFFF"
+      "--paper": "#FFFFFF",
+      "--paper-dim": "#F7F8F6",
+      "--ink": "#1A1A1A",
+      "--ink-soft": "#505A54",
+      "--navy": "#0B3D2E",
+      "--navy-soft": "#BF9B30",
+      "--clay": "#0B3D2E",
+      "--clay-soft": "#BF9B30",
+      "--green": "#0B3D2E",
+      "--green-soft": "#27604D",
+      "--line": "#BF9B30",
+      "--white": "#FFFFFF"
     },
     "dark": {
-      "--paper": "#FFFFFF", "--paper-dim": "#F7F8F6", "--ink": "#1A1A1A", "--ink-soft": "#505A54",
-      "--navy": "#0B3D2E", "--navy-soft": "#BF9B30", "--clay": "#0B3D2E", "--clay-soft": "#BF9B30",
-      "--green": "#0B3D2E", "--green-soft": "#27604D", "--line": "#BF9B30", "--white": "#FFFFFF"
+      "--paper": "#FFFFFF",
+      "--paper-dim": "#F7F8F6",
+      "--ink": "#1A1A1A",
+      "--ink-soft": "#505A54",
+      "--navy": "#0B3D2E",
+      "--navy-soft": "#BF9B30",
+      "--clay": "#0B3D2E",
+      "--clay-soft": "#BF9B30",
+      "--green": "#0B3D2E",
+      "--green-soft": "#27604D",
+      "--line": "#BF9B30",
+      "--white": "#FFFFFF"
     }
   },
   "brand": {
@@ -24,11 +42,27 @@
   "header": {
     "homeHref": "#top",
     "navigation": [
-      { "label": "Shabka Constructions", "href": "#constructions" },
-      { "label": "Shabka Impex", "href": "#impex" },
-      { "label": "Shabka Agro", "href": "#agro" },
-      { "label": "About Us", "href": "#about" },
-      { "label": "Contact", "href": "#contact", "style": "primary" }
+      {
+        "label": "Shabka Constructions",
+        "href": "#constructions"
+      },
+      {
+        "label": "Shabka Impex",
+        "href": "#impex"
+      },
+      {
+        "label": "Shabka Agro",
+        "href": "#agro"
+      },
+      {
+        "label": "About Us",
+        "href": "#about"
+      },
+      {
+        "label": "Contact",
+        "href": "#contact",
+        "style": "primary"
+      }
     ]
   },
   "hero": {
@@ -39,10 +73,22 @@
     "titleAfter": ", moving them on global routes.",
     "description": "Shabka Ideal Private Limited is a Ranchi-based group operating across real estate, import & export, and — soon — agro-business, run with the same hands-on discipline in every division.",
     "actions": [
-      { "label": "Our Story", "href": "#about", "style": "primary" },
-      { "label": "Get in Touch", "href": "#contact", "style": "ghost" }
+      {
+        "label": "Our Story",
+        "href": "#about",
+        "style": "primary"
+      },
+      {
+        "label": "Get in Touch",
+        "href": "#contact",
+        "style": "ghost"
+      }
     ],
-    "illustration": "<rect x=\"0\" y=\"300\" width=\"480\" height=\"120\" fill=\"var(--paper-dim)\"/><rect x=\"60\" y=\"200\" width=\"46\" height=\"100\" fill=\"var(--navy-soft)\" opacity=\".9\"/><rect x=\"112\" y=\"160\" width=\"36\" height=\"140\" fill=\"var(--navy)\" opacity=\".85\"/><rect x=\"154\" y=\"225\" width=\"30\" height=\"75\" fill=\"var(--navy-soft)\" opacity=\".7\"/><rect x=\"70\" y=\"215\" width=\"8\" height=\"8\" fill=\"var(--paper)\" opacity=\".5\"/><rect x=\"86\" y=\"215\" width=\"8\" height=\"8\" fill=\"var(--paper)\" opacity=\".5\"/><rect x=\"70\" y=\"235\" width=\"8\" height=\"8\" fill=\"var(--paper)\" opacity=\".5\"/><rect x=\"122\" y=\"180\" width=\"7\" height=\"7\" fill=\"var(--paper)\" opacity=\".5\"/><rect x=\"136\" y=\"180\" width=\"7\" height=\"7\" fill=\"var(--paper)\" opacity=\".5\"/><rect x=\"122\" y=\"198\" width=\"7\" height=\"7\" fill=\"var(--paper)\" opacity=\".5\"/><circle cx=\"330\" cy=\"120\" r=\"52\" fill=\"none\" stroke=\"var(--clay-soft)\" stroke-width=\"1.4\" opacity=\".8\"/><ellipse cx=\"330\" cy=\"120\" rx=\"52\" ry=\"20\" fill=\"none\" stroke=\"var(--clay-soft)\" opacity=\".55\"/><line x1=\"278\" y1=\"120\" x2=\"382\" y2=\"120\" stroke=\"var(--clay-soft)\" opacity=\".55\"/><path d=\"M0 330C60 310 110 350 170 330C230 310 280 350 340 330C380 317 420 322 480 312\" stroke=\"var(--navy-soft)\" stroke-width=\"2\" fill=\"none\" opacity=\".6\"/><path d=\"M0 355C60 340 110 372 170 355C230 338 280 372 340 355C380 344 420 348 480 340\" stroke=\"var(--clay-soft)\" stroke-width=\"2\" fill=\"none\" opacity=\".5\"/><g opacity=\".8\" stroke=\"var(--green-soft)\" stroke-width=\"2.5\" stroke-linecap=\"round\"><line x1=\"200\" y1=\"300\" x2=\"200\" y2=\"285\"/><line x1=\"215\" y1=\"300\" x2=\"215\" y2=\"278\"/><line x1=\"230\" y1=\"300\" x2=\"230\" y2=\"288\"/><line x1=\"245\" y1=\"300\" x2=\"245\" y2=\"280\"/></g>"
+    "images": {
+      "desktop": "/hero%20section/hero-section-image-desktop.png",
+      "mobile": "/hero%20section/hero-section-image-mobile.png",
+      "alt": "Shabka Ideal connects construction, agriculture, and global trade."
+    }
   },
   "about": {
     "id": "about",
@@ -57,17 +103,90 @@
     "heading": "Three divisions, one standard.",
     "description": "Each business is independently run, sharing only the group's name and its discipline.",
     "items": [
-      { "id": "constructions", "name": "Shabka Constructions", "description": "Real estate development and construction across Ranchi and Jharkhand — residential, commercial, and land development, delivered end to end.", "linkLabel": "View projects", "href": "#contact", "theme": "clay", "featured": true, "icon": "<path d=\"M4 28V14L17 5L30 14V28H4Z\"/><path d=\"M12 28V18H22V28\"/>" },
-      { "id": "impex", "name": "Shabka Impex", "description": "Import and export trade connecting local suppliers with international markets.", "linkLabel": "Learn more", "href": "#contact", "theme": "navy-card", "icon": "<path d=\"M3 17C3 17 9 9 17 9C25 9 31 17 31 17C31 17 25 25 17 25C9 25 3 17 3 17Z\"/><circle cx=\"17\" cy=\"17\" r=\"3.5\"/>" },
-      { "id": "agro", "name": "Shabka Agro", "description": "Farming and agro-business, launching soon as the group's newest venture into cultivation and agricultural trade.", "linkLabel": "Coming soon", "href": "#contact", "theme": "green-card", "icon": "<path d=\"M17 30V14\"/><path d=\"M17 18C17 18 8 17 8 8C17 8 17 18 17 18Z\"/><path d=\"M17 22C17 22 26 21 26 12C17 12 17 22 17 22Z\"/>" }
+      {
+        "id": "constructions",
+        "name": "Shabka Constructions",
+        "description": "Real estate development and construction across Ranchi and Jharkhand — residential, commercial, and land development, delivered end to end.",
+        "linkLabel": "View projects",
+        "href": "#contact",
+        "theme": "clay",
+        "featured": true,
+        "icon": "<path d=\"M4 28V14L17 5L30 14V28H4Z\"/><path d=\"M12 28V18H22V28\"/>"
+      },
+      {
+        "id": "impex",
+        "name": "Shabka Impex",
+        "description": "Import and export trade connecting local suppliers with international markets.",
+        "linkLabel": "Learn more",
+        "href": "#contact",
+        "theme": "navy-card",
+        "icon": "<path d=\"M3 17C3 17 9 9 17 9C25 9 31 17 31 17C31 17 25 25 17 25C9 25 3 17 3 17Z\"/><circle cx=\"17\" cy=\"17\" r=\"3.5\"/>"
+      },
+      {
+        "id": "agro",
+        "name": "Shabka Agro",
+        "description": "Farming and agro-business, launching soon as the group's newest venture into cultivation and agricultural trade.",
+        "linkLabel": "Coming soon",
+        "href": "#contact",
+        "theme": "green-card",
+        "icon": "<path d=\"M17 30V14\"/><path d=\"M17 18C17 18 8 17 8 8C17 8 17 18 17 18Z\"/><path d=\"M17 22C17 22 26 21 26 12C17 12 17 22 17 22Z\"/>"
+      }
     ]
   },
   "footer": {
     "id": "contact",
     "columns": [
-      { "heading": "Divisions", "links": [{ "label": "Constructions", "href": "#constructions" }, { "label": "Impex", "href": "#impex" }, { "label": "Agro", "href": "#agro" }] },
-      { "heading": "Company", "links": [{ "label": "About Us", "href": "#about" }, { "label": "Contact", "href": "#contact" }, { "label": "Careers", "href": "mailto:info@shabkaideal.com" }] },
-      { "heading": "Contact", "links": [{ "label": "Ranchi, Jharkhand, India", "href": "https://maps.google.com/?q=Ranchi,Jharkhand" }, { "label": "info@shabkaideal.com", "href": "mailto:info@shabkaideal.com" }, { "label": "+91 00000 00000", "href": "tel:+910000000000" }] }
+      {
+        "heading": "Divisions",
+        "links": [
+          {
+            "label": "Constructions",
+            "href": "#constructions"
+          },
+          {
+            "label": "Impex",
+            "href": "#impex"
+          },
+          {
+            "label": "Agro",
+            "href": "#agro"
+          }
+        ]
+      },
+      {
+        "heading": "Company",
+        "links": [
+          {
+            "label": "About Us",
+            "href": "#about"
+          },
+          {
+            "label": "Contact",
+            "href": "#contact"
+          },
+          {
+            "label": "Careers",
+            "href": "mailto:info@shabkaideal.com"
+          }
+        ]
+      },
+      {
+        "heading": "Contact",
+        "links": [
+          {
+            "label": "Ranchi, Jharkhand, India",
+            "href": "https://maps.google.com/?q=Ranchi,Jharkhand"
+          },
+          {
+            "label": "info@shabkaideal.com",
+            "href": "mailto:info@shabkaideal.com"
+          },
+          {
+            "label": "+91 00000 00000",
+            "href": "tel:+910000000000"
+          }
+        ]
+      }
     ],
     "copyright": "© 2026 Shabka Ideal Private Limited",
     "location": "Ranchi, Jharkhand"

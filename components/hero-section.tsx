@@ -1,3 +1,4 @@
+import Image from "next/image";
 import site from "../lib.json";
 
 export function HeroSection() {
@@ -7,5 +8,8 @@ export function HeroSection() {
     <h1>{hero.titleBefore}<em>{hero.titleEmphasis}</em>{hero.titleAfter}</h1>
     <p className="lede">{hero.description}</p>
     <div className="hero-ctas">{hero.actions.map((action) => <a key={action.href} className={action.style === "primary" ? "btn-primary" : "btn-ghost"} href={action.href}>{action.label}</a>)}</div>
-  </div><div className="hero-art"><svg viewBox="0 0 480 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-label={site.metadata.description} dangerouslySetInnerHTML={{ __html: hero.illustration }} /></div></div></section>;
+  </div><div className="hero-art"><picture className="hero-picture">
+    <source media="(max-width: 520px)" srcSet={hero.images.mobile} width={1940} height={811} />
+    <Image src={hero.images.desktop} alt={hero.images.alt} width={1254} height={1254} priority sizes="(max-width: 860px) 90vw, 42vw" />
+  </picture></div></div></section>;
 }
