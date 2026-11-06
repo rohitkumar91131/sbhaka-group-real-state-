@@ -31,3 +31,9 @@ footer{background:var(--paper);color:var(--ink);padding:56px 0 28px;border-top:1
 .footer-col a.whatsapp-link{display:inline-flex;width:max-content;margin-top:4px;color:var(--green);font-weight:600;text-decoration:none;border-bottom:1px solid transparent;padding-bottom:3px;transition:border-color .16s ease}
 @media(hover:hover) and (pointer:fine){.footer-col a.whatsapp-link:hover,.footer-col a.whatsapp-link:focus-visible{border-color:var(--green)}}
 @media(hover:none){.footer-col a.whatsapp-link{border-color:var(--green)}}
+html{scrollbar-width:thin;scrollbar-color:var(--green-soft) var(--paper-dim)}
+::-webkit-scrollbar{width:10px;height:10px}
+::-webkit-scrollbar-track{background:var(--paper-dim)}
+::-webkit-scrollbar-thumb{background:var(--green-soft);border:2px solid var(--paper-dim);border-radius:8px}
+::-webkit-scrollbar-thumb:hover{background:var(--green)}
+::-webkit-scrollbar-corner{background:var(--paper)}
