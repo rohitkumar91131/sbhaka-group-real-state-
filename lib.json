@@ -207,10 +207,13 @@
           },
           {
             "label": "+91 96081 22203",
-            "href": "tel:+919608122203",
-            "whatsappHref": "https://wa.me/919608122203",
-            "whatsappLabel": "Open WhatsApp chat with Shabka Group",
-            "whatsappExternal": true
+            "href": "tel:+919608122203"
+          },
+          {
+            "label": "Chat on WhatsApp",
+            "href": "https://wa.me/919608122203",
+            "style": "whatsapp",
+            "external": true
           }
         ]
       }
