@@ -12,6 +12,9 @@ export const runtime = "nodejs";
 export async function POST(request: NextRequest) {
   const password = process.env.ADMIN_PASSWORD;
   if (!password) return NextResponse.json({ errorCode: "missing_admin_password" }, { status: 503, headers: { "Cache-Control": "no-store" } });
+  if ([...password].length !== 10) {
+    return NextResponse.json({ errorCode: "invalid_password_config" }, { status: 503, headers: { "Cache-Control": "no-store" } });
+  }
   if (!process.env.ADMIN_TOKEN_SECRET || Buffer.byteLength(process.env.ADMIN_TOKEN_SECRET, "utf8") < 32) {
     return NextResponse.json({ errorCode: "missing_token_secret" }, { status: 503, headers: { "Cache-Control": "no-store" } });
   }
@@ -30,7 +33,7 @@ export async function POST(request: NextRequest) {
     ? body.password
     : "";
 
-  if (!verifyAdminPassword(candidate, password)) {
+  if ([...candidate].length !== 10 || !verifyAdminPassword(candidate, password)) {
     return NextResponse.json({ errorCode: "invalid_password" }, { status: 401, headers: { "Cache-Control": "no-store" } });
   }
 
