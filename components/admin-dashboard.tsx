@@ -1,8 +1,7 @@
 "use client";
 
 import { useEffect, useState, type FormEvent } from "react";
-
-type AdminCopy = typeof import("../lib.json").default.admin;
+import type { AdminCopy } from "../lib/site-data";
 type Enquiry = {
   id: string;
   name: string;

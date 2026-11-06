@@ -1,8 +1,7 @@
 "use client";
 
-import { FormEvent, useState } from "react";
-
-type ContactCopy = typeof import("../lib.json").default.contact;
+import { useState, type FormEvent } from "react";
+import type { ContactCopy } from "../lib/site-data";
 
 export function ContactForm({ contact, divisions }: { contact: ContactCopy; divisions: string[] }) {
   const [sending, setSending] = useState(false);
