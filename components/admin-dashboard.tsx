@@ -73,7 +73,7 @@ export function AdminDashboard({ copy }: { copy: AdminCopy }) {
         const data = await response.json().catch(() => ({})) as { errorCode?: string };
         if (data.errorCode === "invalid_password") setError(copy.invalidPasswordMessage);
         else if (data.errorCode === "storage_unavailable") setError(copy.databaseErrorMessage);
-        else if (data.errorCode?.startsWith("missing_") || data.errorCode === "invalid_password_config") setError(copy.configurationErrorMessage);
+        else if (data.errorCode?.startsWith("missing_")) setError(copy.configurationErrorMessage);
         else setError(copy.loadErrorMessage);
         return;
       }
@@ -113,8 +113,6 @@ export function AdminDashboard({ copy }: { copy: AdminCopy }) {
             name="password"
             type="password"
             autoComplete="current-password"
-            minLength={10}
-            maxLength={10}
             value={password}
             onChange={(event) => setPassword(event.target.value)}
             required
