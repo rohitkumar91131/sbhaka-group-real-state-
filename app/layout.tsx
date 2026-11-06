@@ -6,7 +6,12 @@ const cssVariables = (values: Record<string, string>) => Object.entries(values).
 
 export const metadata: Metadata = {
   title: site.metadata.title,
-  description: site.metadata.description
+  description: site.metadata.description,
+  icons: {
+    icon: [{ url: "/logo.png", type: "image/png" }],
+    shortcut: "/logo.png",
+    apple: "/logo.png"
+  }
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
