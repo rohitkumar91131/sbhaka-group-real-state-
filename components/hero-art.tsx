@@ -17,15 +17,15 @@ export function HeroArt({ desktop, mobile, animated, alt }: HeroArtProps) {
     <div className={`hero-art-media${animationReady ? " is-ready" : ""}`}>
       <picture className="hero-picture">
         <source media="(max-width: 520px)" srcSet={mobile} width={1940} height={811} />
-        <Image src={desktop} alt={alt} width={1254} height={1254} priority sizes="(max-width: 860px) 90vw, 42vw" />
+        <Image src={desktop} alt={animationReady ? "" : alt} aria-hidden={animationReady} width={1254} height={1254} priority sizes="(max-width: 860px) 90vw, 42vw" />
       </picture>
       <Image
         className="hero-art-gif"
         src={animated}
         alt=""
         aria-hidden="true"
-        width={412}
-        height={412}
+        width={421}
+        height={415}
         unoptimized
         onLoad={() => setAnimationReady(true)}
       />

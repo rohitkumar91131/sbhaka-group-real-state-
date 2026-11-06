@@ -86,9 +86,9 @@
       }
     ],
     "images": {
-      "desktop": "/hero%20section/hero-section-image-desktop.png",
+      "desktop": "/hero%20section/hero-image.png",
       "mobile": "/hero%20section/hero-section-image-mobile.png",
-      "animated": "/hero%20section/hero-section.png.gif",
+      "animated": "/hero%20section/hero.gif",
       "alt": "Shabka Ideal connects construction, agriculture, and global trade."
     },
     "paragraphs": [
@@ -188,6 +188,23 @@
     "submittingLabel": "Sending…",
     "successMessage": "Thanks for reaching out. We’ll be in touch soon.",
     "errorMessage": "We couldn’t send your enquiry right now. Please try again or contact us by email."
+  },
+  "admin": {
+    "title": "Enquiry dashboard",
+    "loginHeading": "Admin sign in",
+    "passwordLabel": "Password",
+    "loginButton": "View enquiries",
+    "logoutButton": "Sign out",
+    "loadingLabel": "Checking access…",
+    "dashboardHeading": "Website enquiries",
+    "emptyMessage": "No enquiries yet.",
+    "invalidPasswordMessage": "That password didn’t match. Try again.",
+    "loadErrorMessage": "Could not load enquiries. Please try again.",
+    "nameLabel": "Name",
+    "emailLabel": "Email",
+    "phoneLabel": "Phone",
+    "divisionLabel": "Business area",
+    "messageLabel": "Message"
   },
   "footer": {
     "id": "site-footer",
