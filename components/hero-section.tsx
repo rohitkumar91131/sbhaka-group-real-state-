@@ -1,3 +1,4 @@
+import Image from "next/image";
 import site from "../lib.json";
 import { AnimatedReveal, AnimatedWords } from "./animated-words";
 import { HeroArt } from "./hero-art";
