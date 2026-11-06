@@ -1,6 +1,6 @@
-import Image from "next/image";
 import site from "../lib.json";
 import { AnimatedReveal, AnimatedWords } from "./animated-words";
+import { HeroArt } from "./hero-art";
 
 export function HeroSection() {
   const hero = site.hero;
@@ -9,8 +9,5 @@ export function HeroSection() {
     <p className="hero-subtitle"><AnimatedWords text={hero.subtitle} /></p>
     {hero.paragraphs.map((paragraph) => <p className="hero-description" key={paragraph}>{paragraph}</p>)}
     <div className="hero-ctas">{hero.actions.map((action) => <a key={action.href} className={action.style === "primary" ? "btn-primary" : "btn-ghost"} href={action.href}>{action.label}</a>)}</div>
-  </div><div className="hero-art"><picture className="hero-picture">
-    <source media="(max-width: 520px)" srcSet={hero.images.mobile} width={1940} height={811} />
-    <Image src={hero.images.desktop} alt={hero.images.alt} width={1254} height={1254} priority sizes="(max-width: 860px) 90vw, 42vw" />
-  </picture></div></div></section>;
+  </div><div className="hero-art"><HeroArt desktop={hero.images.desktop} mobile={hero.images.mobile} animated={hero.images.animated} alt={hero.images.alt} /></div></div></section>;
 }

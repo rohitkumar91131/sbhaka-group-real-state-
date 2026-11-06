@@ -88,6 +88,7 @@
     "images": {
       "desktop": "/hero%20section/hero-section-image-desktop.png",
       "mobile": "/hero%20section/hero-section-image-mobile.png",
+      "animated": "/hero%20section/hero-section.png.gif",
       "alt": "Shabka Ideal connects construction, agriculture, and global trade."
     },
     "paragraphs": [
