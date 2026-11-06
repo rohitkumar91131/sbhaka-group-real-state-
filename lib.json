@@ -70,9 +70,6 @@
   },
   "hero": {
     "id": "top",
-    "titleBefore": "Rooted in India. ",
-    "titleEmphasis": "Routed to the World.",
-    "titleAfter": "",
     "subtitle": "Real estate, trade, and agriculture, built on trust and carried forward together.",
     "actions": [
       {
@@ -94,7 +91,13 @@
     "paragraphs": [
       "Shabka Ideal Private Limited is a family-run group, and that single fact shapes everything we do. In a family, trust isn't a policy. It is how you treat people when no one is watching, and it is the first thing we offer every client, partner, and customer who works with us.",
       "From the land we deal in and the homes we build, to the goods we source across borders and the fields we are growing into, we bring the same proficiency and the same personal accountability to every venture. We don't believe in doing business at arm's length. We believe in moving forward together."
-    ]
+    ],
+    "headingImage": {
+      "src": "/hero%20section/Rooted%20in%20India,%20Routed%20Worldwide.png",
+      "alt": "Rooted in India. Routed to the World.",
+      "width": 2172,
+      "height": 724
+    }
   },
   "about": {
     "id": "about",

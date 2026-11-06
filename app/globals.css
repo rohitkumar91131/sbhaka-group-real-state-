@@ -21,3 +21,5 @@ footer{background:var(--paper);color:var(--ink);padding:56px 0 28px;border-top:1
 
 .div-card .div-icon{min-height:72px;display:flex;align-items:center}.div-card .div-icon img{display:block;width:88px;height:auto;object-fit:contain;object-position:left center}
 .site-header,.hero,.about,footer,.footer-inner{border:0}.div-card{border:0;background:transparent}
+
+.hero h1.hero-image-title{width:100%;max-width:none;line-height:1;letter-spacing:0}.hero-image-title img{display:block;width:100%;height:auto}
