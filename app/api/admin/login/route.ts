@@ -12,9 +12,6 @@ export const runtime = "nodejs";
 export async function POST(request: NextRequest) {
   const password = process.env.ADMIN_PASSWORD;
   if (!password) return NextResponse.json({ errorCode: "missing_admin_password" }, { status: 503, headers: { "Cache-Control": "no-store" } });
-  if (!process.env.ADMIN_TOKEN_SECRET || Buffer.byteLength(process.env.ADMIN_TOKEN_SECRET, "utf8") < 32) {
-    return NextResponse.json({ errorCode: "missing_token_secret" }, { status: 503, headers: { "Cache-Control": "no-store" } });
-  }
   if (!process.env.MONGODB_URI) {
     return NextResponse.json({ errorCode: "missing_mongodb_uri" }, { status: 503, headers: { "Cache-Control": "no-store" } });
   }

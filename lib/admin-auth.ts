@@ -32,11 +32,9 @@ type AdminSession = Document & {
 const jwtHeader = Buffer.from(JSON.stringify({ alg: "HS256", typ: "JWT" })).toString("base64url");
 
 function getTokenSecret() {
-  const secret = process.env.ADMIN_TOKEN_SECRET;
-  if (!secret || Buffer.byteLength(secret, "utf8") < 32) {
-    throw new Error("ADMIN_TOKEN_SECRET must be set to at least 32 bytes");
-  }
-  return secret;
+  const material = process.env.MONGODB_URI;
+  if (!material) throw new Error("MONGODB_URI is required to sign admin tokens");
+  return createHash("sha256").update("shabka-admin-token-v1\0").update(material).digest();
 }
 
 function sign(input: string) {
