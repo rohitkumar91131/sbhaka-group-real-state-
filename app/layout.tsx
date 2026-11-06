@@ -8,9 +8,9 @@ export const metadata: Metadata = {
   title: site.metadata.title,
   description: site.metadata.description,
   icons: {
-    icon: [{ url: "/logo.png", type: "image/png" }],
-    shortcut: "/logo.png",
-    apple: "/logo.png"
+    icon: [{ url: "/favicon.png", type: "image/png" }],
+    shortcut: "/favicon.png",
+    apple: "/favicon.png"
   }
 };
 
