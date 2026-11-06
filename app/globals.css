@@ -40,3 +40,5 @@ html{scrollbar-width:thin;scrollbar-color:var(--green-soft) var(--paper-dim)}
 :is(h1:not(.hero-image-title),h2,h3,h4,.hero-subtitle,.about-label){text-decoration-line:underline;text-decoration-color:transparent;text-decoration-thickness:1.5px;text-underline-offset:.2em;transition:text-decoration-color .24s ease}
 :is(h1:not(.hero-image-title),h2,h3,h4,.hero-subtitle,.about-label):is(:hover,:active,:focus-visible){text-decoration-color:var(--clay-soft)}
 @media(prefers-reduced-motion:reduce){:is(h1:not(.hero-image-title),h2,h3,h4,.hero-subtitle,.about-label){transition:none}}
+
+:is(h1:not(.hero-image-title),h2,h3,h4,.hero-subtitle,.about-label){color:var(--heading-gold)}

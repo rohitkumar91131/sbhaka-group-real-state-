@@ -16,7 +16,8 @@
       "--green": "#0B3D2E",
       "--green-soft": "#27604D",
       "--line": "#BF9B30",
-      "--white": "#FFFFFF"
+      "--white": "#FFFFFF",
+      "--heading-gold": "#806214"
     },
     "dark": {
       "--paper": "#FFFFFF",
@@ -30,7 +31,8 @@
       "--green": "#0B3D2E",
       "--green-soft": "#27604D",
       "--line": "#BF9B30",
-      "--white": "#FFFFFF"
+      "--white": "#FFFFFF",
+      "--heading-gold": "#806214"
     }
   },
   "brand": {
