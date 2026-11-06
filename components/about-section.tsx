@@ -1,8 +1,9 @@
 import site from "../lib.json";
 
 export function AboutSection() {
-  return <section className="about" id={site.about.id}><div className="wrap about-inner"><h2 className="about-label">{site.about.label}</h2><div className="about-text">
-    {site.about.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
-    <p className="motto">{site.about.motto}</p>
+  return <section className="about about-preview"><div className="wrap about-inner"><p className="about-label">{site.about.label}</p><div className="about-text">
+    <h2>{site.landing.aboutPreviewHeading}</h2>
+    <p>{site.landing.aboutPreviewText}</p>
+    <a className="about-preview-link" href={site.landing.aboutPreviewHref}>{site.landing.aboutPreviewLink}<span aria-hidden="true"> ↗</span></a>
   </div></div></section>;
 }

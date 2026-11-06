@@ -1,7 +1,7 @@
 {
   "metadata": {
     "title": "Shabka Ideal Private Limited",
-    "description": "A Ranchi-based group building local roots and global routes across construction, trade, and agro-business."
+    "description": "Real estate, trade, and agriculture, built on trust and carried forward together."
   },
   "theme": {
     "light": {
@@ -40,47 +40,46 @@
     "logo": "<circle cx=\"24\" cy=\"24\" r=\"23\" stroke=\"var(--green)\" stroke-opacity=\".7\"/><path d=\"M12 27L20 19L24 23L30 15L36 24\" stroke=\"var(--clay)\" stroke-width=\"2.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M10 33C14 30 18 30 22 33C26 36 30 36 34 33C36 31.5 37 31 38 30.5\" stroke=\"var(--clay-soft)\" stroke-width=\"2.2\" stroke-linecap=\"round\"/>"
   },
   "header": {
-    "homeHref": "#top",
+    "homeHref": "/#top",
     "navigation": [
       {
-        "label": "Shabka Constructions",
-        "href": "#constructions"
+        "label": "Shabka Real Estate",
+        "href": "/divisions/real-estate"
       },
       {
         "label": "Shabka Impex",
-        "href": "#impex"
+        "href": "/divisions/impex"
       },
       {
         "label": "Shabka Agro",
-        "href": "#agro"
+        "href": "/divisions/agro"
       },
       {
         "label": "About Us",
-        "href": "#about"
+        "href": "/about"
       },
       {
         "label": "Contact",
-        "href": "#contact",
+        "href": "/#contact",
         "style": "primary"
       }
     ]
   },
   "hero": {
     "id": "top",
-    "location": "Ranchi, Jharkhand — since inception",
-    "titleBefore": "Building ventures with ",
-    "titleEmphasis": "local roots",
-    "titleAfter": ", moving them on global routes.",
-    "description": "Shabka Ideal Private Limited is a Ranchi-based group operating across real estate, import & export, and — soon — agro-business, run with the same hands-on discipline in every division.",
+    "titleBefore": "Rooted in India. ",
+    "titleEmphasis": "Routed to the World.",
+    "titleAfter": "",
+    "subtitle": "Real estate, trade, and agriculture, built on trust and carried forward together.",
     "actions": [
       {
-        "label": "Our Story",
-        "href": "#about",
+        "label": "Explore Our Businesses",
+        "href": "#divisions",
         "style": "primary"
       },
       {
-        "label": "Get in Touch",
-        "href": "#contact",
+        "label": "Our Story",
+        "href": "/about",
         "style": "ghost"
       }
     ],
@@ -88,46 +87,73 @@
       "desktop": "/hero%20section/hero-section-image-desktop.png",
       "mobile": "/hero%20section/hero-section-image-mobile.png",
       "alt": "Shabka Ideal connects construction, agriculture, and global trade."
-    }
+    },
+    "paragraphs": [
+      "Shabka Ideal Private Limited is a family-run group, and that single fact shapes everything we do. In a family, trust isn't a policy. It is how you treat people when no one is watching, and it is the first thing we offer every client, partner, and customer who works with us.",
+      "From the land we deal in and the homes we build, to the goods we source across borders and the fields we are growing into, we bring the same proficiency and the same personal accountability to every venture. We don't believe in doing business at arm's length. We believe in moving forward together."
+    ]
   },
   "about": {
     "id": "about",
     "label": "About Us",
+    "heading": "A Family Business. A Promise of Trust.",
     "paragraphs": [
-      "Shabka Ideal Private Limited began in Ranchi with a simple premise: build things properly, close to home, and use those foundations to reach further. That premise now spans construction and real estate, import and export trade, and a growing agro-business arm.",
-      "Every division is run with the same directness — decisions made close to the ground, relationships built to last, and quality that doesn't get diluted as the company grows into new markets."
+      "Shabka Ideal Private Limited is a family-run company, and that is the heart of who we are. In a family business, your name is on everything you do. There is no hiding behind a brand or a department, which is why we hold ourselves to a standard of honesty and care that no contract could require.",
+      "Growing up in a family teaches you what relationships really mean: that trust is built slowly, kept carefully, and never taken for granted. We bring that understanding to every client, partner, and community we work with. Today our group spans real estate and land dealing, import and export across many sectors, and agriculture, and each division carries the same values.",
+      "Our name carries our ambition. Ideal is not a claim that we are perfect. It is the standard we keep working toward, in every property, every shipment, and every relationship. We take pride in our proficiency, but we take greater pride in being a company people feel comfortable trusting.",
+      "We are rooted in India and reaching further, and we intend to move forward the way we always have: together, with our clients, our partners, and our family."
     ],
-    "motto": "LOCAL ROOTS. GLOBAL ROUTES."
+    "motto": "Local Roots. Global Routes."
   },
   "divisions": {
-    "heading": "Three divisions, one standard.",
-    "description": "Each business is independently run, sharing only the group's name and its discipline.",
+    "id": "divisions",
+    "heading": "Our Businesses",
+    "description": "Real estate, trade, and agriculture, built on trust and carried forward together.",
     "items": [
       {
-        "id": "constructions",
-        "name": "Shabka Constructions",
-        "description": "Real estate development and construction across Ranchi and Jharkhand — residential, commercial, and land development, delivered end to end.",
-        "linkLabel": "View projects",
-        "href": "#contact",
+        "id": "real-estate",
+        "slug": "real-estate",
+        "name": "Shabka Real Estate",
+        "heading": "Land, Homes, and Foundations You Can Trust.",
+        "summary": "Land buying and selling, residential and commercial construction, across India.",
+        "paragraphs": [
+          "Whether you are looking to buy land, sell it, or build on it, Shabka Real Estate guides you through every stage with clarity and care. We deal in land transactions as well as construction, which means we understand a property's full journey, from the first plot to the finished building.",
+          "Property decisions are among the most important a family will ever make, and we treat them that way. Our approach is built on transparent dealings, sound proficiency, and honest advice, even when the honest answer is not the easiest one to give. As a family-run company, we know what it means to build something meant to last, and we want every client to leave feeling that their trust was well placed."
+        ],
+        "linkLabel": "Explore Real Estate",
+        "href": "/divisions/real-estate",
         "theme": "clay",
         "featured": true,
         "icon": "<path d=\"M4 28V14L17 5L30 14V28H4Z\"/><path d=\"M12 28V18H22V28\"/>"
       },
       {
         "id": "impex",
+        "slug": "impex",
         "name": "Shabka Impex",
-        "description": "Import and export trade connecting local suppliers with international markets.",
-        "linkLabel": "Learn more",
-        "href": "#contact",
+        "heading": "Whatever You Need, We'll Find a Way.",
+        "summary": "Import and export across commodities and sectors, built on reliability.",
+        "paragraphs": [
+          "Shabka Impex is not limited to a single product or a single industry. We work across a wide range of products and commodities in many different sectors, connecting suppliers and buyers in India and around the world.",
+          "Looking for something specific? Tell us what you need, and we will work to make it available. Our strength lies in sourcing, in understanding what a deal requires, and in seeing it through from enquiry to delivery. We handle the details with proficiency so you can focus on your business.",
+          "Every shipment carries our name, and we protect it with honest dealing, dependable quality, and a commitment to the relationship beyond the transaction. We succeed when our partners do, and that is the only way we know how to work."
+        ],
+        "linkLabel": "Explore Impex",
+        "href": "/divisions/impex",
         "theme": "navy-card",
         "icon": "<path d=\"M3 17C3 17 9 9 17 9C25 9 31 17 31 17C31 17 25 25 17 25C9 25 3 17 3 17Z\"/><circle cx=\"17\" cy=\"17\" r=\"3.5\"/>"
       },
       {
         "id": "agro",
+        "slug": "agro",
         "name": "Shabka Agro",
-        "description": "Farming and agro-business, launching soon as the group's newest venture into cultivation and agricultural trade.",
-        "linkLabel": "Coming soon",
-        "href": "#contact",
+        "heading": "Growing with the Land. Growing Together.",
+        "summary": "Our newest venture, rooted in farming and agricultural trade.",
+        "paragraphs": [
+          "Agriculture is where every community begins, and it is where Shabka Agro is taking root. Our move into farming and agro-business is guided by the belief that good agriculture should be sustainable, fairly traded, and respectful of the land and the farmers who depend on it.",
+          "We bring to this venture what we have built across our other businesses: proficiency, patience, and a deep respect for trust. As we grow, we aim to connect what is cultivated locally with the wider markets that value it, and to do so in a way that benefits everyone along the chain, from the farmer to the final buyer."
+        ],
+        "linkLabel": "Explore Agro",
+        "href": "/divisions/agro",
         "theme": "green-card",
         "icon": "<path d=\"M17 30V14\"/><path d=\"M17 18C17 18 8 17 8 8C17 8 17 18 17 18Z\"/><path d=\"M17 22C17 22 26 21 26 12C17 12 17 22 17 22Z\"/>"
       }
@@ -140,16 +166,16 @@
         "heading": "Divisions",
         "links": [
           {
-            "label": "Constructions",
-            "href": "#constructions"
+            "label": "Shabka Real Estate",
+            "href": "/divisions/real-estate"
           },
           {
-            "label": "Impex",
-            "href": "#impex"
+            "label": "Shabka Impex",
+            "href": "/divisions/impex"
           },
           {
-            "label": "Agro",
-            "href": "#agro"
+            "label": "Shabka Agro",
+            "href": "/divisions/agro"
           }
         ]
       },
@@ -158,11 +184,11 @@
         "links": [
           {
             "label": "About Us",
-            "href": "#about"
+            "href": "/about"
           },
           {
             "label": "Contact",
-            "href": "#contact"
+            "href": "/#contact"
           },
           {
             "label": "Careers",
@@ -190,5 +216,17 @@
     ],
     "copyright": "© 2026 Shabka Ideal Private Limited",
     "location": "Ranchi, Jharkhand"
+  },
+  "landing": {
+    "aboutPreviewHeading": "A Family Business. A Promise of Trust.",
+    "aboutPreviewText": "Shabka Ideal Private Limited is a family-run company, and that is the heart of who we are. In a family business, your name is on everything you do. There is no hiding behind a brand or a department, which is why we hold ourselves to a standard of honesty and care that no contract could require.",
+    "aboutPreviewLink": "Read About Us",
+    "aboutPreviewHref": "/about"
+  },
+  "navigationText": {
+    "mainAriaLabel": "Main navigation",
+    "divisionBackLink": "Back to all businesses",
+    "aboutLink": "Read About Us",
+    "divisionBackHref": "/#divisions"
   }
 }
