@@ -127,7 +127,8 @@
         "href": "/divisions/real-estate",
         "theme": "clay",
         "featured": true,
-        "icon": "<path d=\"M4 28V14L17 5L30 14V28H4Z\"/><path d=\"M12 28V18H22V28\"/>"
+        "icon": "/business%20sectioon%20icon/shabka%20real%20state%20icon.png",
+        "iconAlt": "Shabka Real Estate icon"
       },
       {
         "id": "impex",
@@ -143,7 +144,8 @@
         "linkLabel": "Explore Impex",
         "href": "/divisions/impex",
         "theme": "navy-card",
-        "icon": "<path d=\"M3 17C3 17 9 9 17 9C25 9 31 17 31 17C31 17 25 25 17 25C9 25 3 17 3 17Z\"/><circle cx=\"17\" cy=\"17\" r=\"3.5\"/>"
+        "icon": "/business%20sectioon%20icon/shabka%20impex%20icon.png",
+        "iconAlt": "Shabka Impex icon"
       },
       {
         "id": "agro",
@@ -158,7 +160,8 @@
         "linkLabel": "Explore Agro",
         "href": "/divisions/agro",
         "theme": "green-card",
-        "icon": "<path d=\"M17 30V14\"/><path d=\"M17 18C17 18 8 17 8 8C17 8 17 18 17 18Z\"/><path d=\"M17 22C17 22 26 21 26 12C17 12 17 22 17 22Z\"/>"
+        "icon": "/business%20sectioon%20icon/shabka%20agro%20icon.png",
+        "iconAlt": "Shabka Agro icon"
       }
     ]
   },
