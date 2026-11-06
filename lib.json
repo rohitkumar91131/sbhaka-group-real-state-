@@ -200,6 +200,8 @@
     "emptyMessage": "No enquiries yet.",
     "invalidPasswordMessage": "That password didn’t match. Try again.",
     "loadErrorMessage": "Could not load enquiries. Please try again.",
+    "configurationErrorMessage": "Admin setup is incomplete. In Vercel, set ADMIN_PASSWORD, ADMIN_TOKEN_SECRET (32+ characters), and MONGODB_URI, then redeploy.",
+    "databaseErrorMessage": "Could not connect to MongoDB Atlas. Check the connection URI, database user permissions, and Atlas network access list.",
     "nameLabel": "Name",
     "emailLabel": "Email",
     "phoneLabel": "Phone",

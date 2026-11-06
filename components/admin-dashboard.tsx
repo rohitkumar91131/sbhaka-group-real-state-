@@ -23,10 +23,13 @@ export function AdminDashboard({ copy }: { copy: AdminCopy }) {
     let response = await fetch("/api/admin/enquiries", { cache: "no-store" });
     if (response.status === 401) {
       const refreshResponse = await fetch("/api/admin/refresh", { method: "POST" });
-      if (!refreshResponse.ok) throw new Error("Admin session expired");
+      if (!refreshResponse.ok) throw new Error("unauthorized");
       response = await fetch("/api/admin/enquiries", { cache: "no-store" });
     }
-    if (!response.ok) throw new Error("Unable to load enquiries");
+    if (!response.ok) {
+      const error = await response.json().catch(() => ({})) as { errorCode?: string };
+      throw new Error(error.errorCode ?? "load_error");
+    }
     const data = await response.json() as { enquiries: Enquiry[] };
     setEnquiries(data.enquiries);
     setAuthenticated(true);
@@ -34,7 +37,11 @@ export function AdminDashboard({ copy }: { copy: AdminCopy }) {
 
   useEffect(() => {
     loadEnquiries()
-      .catch(() => undefined)
+      .catch((loadError: unknown) => {
+        if (loadError instanceof Error && loadError.message === "storage_unavailable") {
+          setError(copy.databaseErrorMessage);
+        }
+      })
       .finally(() => setChecking(false));
   }, []);
 
@@ -63,13 +70,17 @@ export function AdminDashboard({ copy }: { copy: AdminCopy }) {
         body: JSON.stringify({ password }),
       });
       if (!response.ok) {
-        setError(response.status === 401 ? copy.invalidPasswordMessage : copy.loadErrorMessage);
+        const data = await response.json().catch(() => ({})) as { errorCode?: string };
+        if (data.errorCode === "invalid_password") setError(copy.invalidPasswordMessage);
+        else if (data.errorCode === "storage_unavailable") setError(copy.databaseErrorMessage);
+        else if (data.errorCode?.startsWith("missing_")) setError(copy.configurationErrorMessage);
+        else setError(copy.loadErrorMessage);
         return;
       }
       setPassword("");
       await loadEnquiries();
     } catch {
-      setError(copy.loadErrorMessage);
+      setError(copy.databaseErrorMessage);
     } finally {
       setChecking(false);
     }

@@ -10,10 +10,10 @@ export async function GET(request: NextRequest) {
   try {
     sid = await authenticateAdminAccessToken(request.cookies.get(ACCESS_COOKIE_NAME)?.value);
   } catch {
-    return NextResponse.json({ error: "Unable to verify admin session" }, { status: 503, headers: { "Cache-Control": "private, no-store" } });
+    return NextResponse.json({ errorCode: "storage_unavailable" }, { status: 503, headers: { "Cache-Control": "private, no-store" } });
   }
   if (!sid) {
-    return NextResponse.json({ error: "Unauthorized" }, { status: 401, headers: { "Cache-Control": "private, no-store" } });
+    return NextResponse.json({ errorCode: "unauthorized" }, { status: 401, headers: { "Cache-Control": "private, no-store" } });
   }
 
   try {
@@ -37,6 +37,6 @@ export async function GET(request: NextRequest) {
       })),
     }, { headers: { "Cache-Control": "private, no-store" } });
   } catch {
-    return NextResponse.json({ error: "Unable to load enquiries" }, { status: 503, headers: { "Cache-Control": "private, no-store" } });
+    return NextResponse.json({ errorCode: "storage_unavailable" }, { status: 503, headers: { "Cache-Control": "private, no-store" } });
   }
 }
