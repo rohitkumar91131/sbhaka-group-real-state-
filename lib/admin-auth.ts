@@ -1,4 +1,5 @@
 import { createHash, createHmac, randomUUID, timingSafeEqual } from "node:crypto";
+import type { Document } from "mongodb";
 import { getMongoClient } from "./mongodb";
 
 export const ACCESS_COOKIE_NAME = "shabka_admin_access";
@@ -17,6 +18,15 @@ type TokenPayload = {
   jti?: string;
   iat: number;
   exp: number;
+};
+
+type AdminSession = Document & {
+  _id: string;
+  refreshHash: string;
+  createdAt: Date;
+  lastUsedAt: Date;
+  expiresAt: Date;
+  absoluteExpiresAt: Date;
 };
 
 const jwtHeader = Buffer.from(JSON.stringify({ alg: "HS256", typ: "JWT" })).toString("base64url");
@@ -99,7 +109,7 @@ export async function createAdminTokenPair() {
   const expiresAt = new Date(now.getTime() + REFRESH_TOKEN_LIFETIME_SECONDS * 1000);
   const absoluteExpiresAt = new Date(now.getTime() + SESSION_MAX_LIFETIME_SECONDS * 1000);
   const client = await getMongoClient();
-  const sessions = client.db(process.env.MONGODB_DB || "shabka_group").collection(SESSION_COLLECTION);
+  const sessions = client.db(process.env.MONGODB_DB || "shabka_group").collection<AdminSession>(SESSION_COLLECTION);
   await sessions.createIndex({ expiresAt: 1 }, { expireAfterSeconds: 0 });
   await sessions.insertOne({
     _id: sid,
@@ -119,7 +129,7 @@ export async function rotateAdminRefreshToken(token: string | undefined) {
   const now = new Date();
   const nextJti = randomUUID();
   const client = await getMongoClient();
-  const sessions = client.db(process.env.MONGODB_DB || "shabka_group").collection(SESSION_COLLECTION);
+  const sessions = client.db(process.env.MONGODB_DB || "shabka_group").collection<AdminSession>(SESSION_COLLECTION);
   const session = await sessions.findOne({
     _id: payload.sid,
     refreshHash: refreshHash(payload.jti),
@@ -149,7 +159,7 @@ export async function authenticateAdminAccessToken(token: string | undefined) {
   const now = new Date();
   const client = await getMongoClient();
   const session = await client.db(process.env.MONGODB_DB || "shabka_group")
-    .collection(SESSION_COLLECTION)
+    .collection<AdminSession>(SESSION_COLLECTION)
     .findOne({ _id: payload.sid, expiresAt: { $gt: now }, absoluteExpiresAt: { $gt: now } }, { projection: { _id: 1 } });
   return session ? payload.sid : null;
 }
@@ -161,5 +171,5 @@ export async function revokeAdminSession(accessToken?: string, refreshToken?: st
   if (!sid) return;
 
   const client = await getMongoClient();
-  await client.db(process.env.MONGODB_DB || "shabka_group").collection(SESSION_COLLECTION).deleteOne({ _id: sid });
+  await client.db(process.env.MONGODB_DB || "shabka_group").collection<AdminSession>(SESSION_COLLECTION).deleteOne({ _id: sid });
 }
