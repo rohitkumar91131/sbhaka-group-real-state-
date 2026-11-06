@@ -63,7 +63,10 @@
         "href": "/#contact",
         "style": "primary"
       }
-    ]
+    ],
+    "navigationId": "primary-navigation",
+    "openMenuLabel": "Open navigation menu",
+    "closeMenuLabel": "Close navigation menu"
   },
   "hero": {
     "id": "top",
