@@ -41,6 +41,11 @@ html{scrollbar-width:thin;scrollbar-color:var(--green-soft) var(--paper-dim)}
 :is(h1:not(.hero-image-title),h2,h3,h4,.hero-subtitle,.about-label):is(:hover,:active,:focus-visible){text-decoration-color:var(--clay-soft)}
 @media(prefers-reduced-motion:reduce){:is(h1:not(.hero-image-title),h2,h3,h4,.hero-subtitle,.about-label){transition:none}}
 
+.animated-words{display:inline}.animated-word{display:inline-block}
+:is(h1:not(.hero-image-title),h2,h3,h4,.hero-subtitle,.about-label) .animated-word{text-decoration:underline;text-decoration-color:transparent;text-decoration-thickness:1.5px;text-underline-offset:.2em;transition:text-decoration-color .24s ease}
+:is(h1:not(.hero-image-title),h2,h3,h4,.hero-subtitle,.about-label):is(:hover,:active,:focus-visible) .animated-word{text-decoration-color:var(--clay-soft)}
+@media(prefers-reduced-motion:reduce){.animated-word{transition:none}}
+
 :is(h1:not(.hero-image-title),h2,h3,h4,.hero-subtitle,.about-label){color:var(--heading-gold)}
 .site-header .brand-symbol{width:48px;height:48px}
 @media(max-width:520px){.site-header .brand-symbol{width:42px;height:42px}}
