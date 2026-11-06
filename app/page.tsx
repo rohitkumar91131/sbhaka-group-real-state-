@@ -3,7 +3,8 @@ import { DivisionsSection } from "../components/divisions-section";
 import { HeroSection } from "../components/hero-section";
 import { SiteFooter } from "../components/site-footer";
 import { SiteHeader } from "../components/site-header";
+import { ContactSection } from "../components/contact-section";
 
 export default function Home() {
-  return <><SiteHeader /><main><HeroSection /><AboutSection /><DivisionsSection /></main><SiteFooter /></>;
+  return <><SiteHeader /><main><HeroSection /><AboutSection /><DivisionsSection /><ContactSection /></main><SiteFooter /></>;
 }
