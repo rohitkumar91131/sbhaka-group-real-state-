@@ -201,6 +201,11 @@
             "href": "mailto:info@shabkaideal.com"
           },
           {
+            "label": "shabkagroup.com",
+            "href": "https://shabkagroup.com",
+            "external": true
+          },
+          {
             "label": "+91 96081 22203",
             "href": "tel:+919608122203",
             "whatsappHref": "https://wa.me/919608122203",
