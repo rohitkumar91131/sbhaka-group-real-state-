@@ -20,3 +20,4 @@ footer{background:var(--paper);color:var(--ink);padding:56px 0 28px;border-top:1
 @media(max-width:860px){.nav-toggle{background:transparent;border:0;box-shadow:none;transition:opacity .18s ease}.nav-toggle:hover{background:transparent;opacity:.68}.nav-toggle:active{transform:scale(.96)}.nav-toggle-line{width:20px;height:2.5px;background:var(--ink)}}
 
 .div-card .div-icon{min-height:72px;display:flex;align-items:center}.div-card .div-icon img{display:block;width:88px;height:auto;object-fit:contain;object-position:left center}
+.site-header,.hero,.about,footer,.footer-inner{border:0}.div-card{border:0;background:var(--paper-dim)}
