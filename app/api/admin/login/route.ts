@@ -1,5 +1,11 @@
 import { NextRequest, NextResponse } from "next/server";
-import { ADMIN_COOKIE_NAME, createAdminSession, verifyAdminPassword } from "../../../../lib/admin-auth";
+import {
+  ACCESS_COOKIE_NAME,
+  ACCESS_TOKEN_LIFETIME_SECONDS,
+  createAdminTokenPair,
+  REFRESH_COOKIE_NAME,
+  verifyAdminPassword,
+} from "../../../../lib/admin-auth";
 
 export const runtime = "nodejs";
 
@@ -17,17 +23,25 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: "Invalid password" }, { status: 401, headers: { "Cache-Control": "no-store" } });
     }
 
-    const session = createAdminSession(password);
+    const tokens = await createAdminTokenPair();
     const response = NextResponse.json({ ok: true }, { headers: { "Cache-Control": "no-store" } });
-    response.cookies.set(ADMIN_COOKIE_NAME, session.value, {
+    response.cookies.set(ACCESS_COOKIE_NAME, tokens.accessToken, {
       httpOnly: true,
       secure: process.env.NODE_ENV === "production",
       sameSite: "strict",
-      path: "/",
-      maxAge: session.maxAge,
+      path: "/api/admin",
+      maxAge: ACCESS_TOKEN_LIFETIME_SECONDS,
     });
+    response.cookies.set(REFRESH_COOKIE_NAME, tokens.refreshToken, {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === "production",
+      sameSite: "strict",
+      path: "/api/admin/refresh",
+      maxAge: tokens.refreshMaxAge,
+    });
+    response.cookies.set("shabka_admin_session", "", { path: "/", maxAge: 0 });
     return response;
   } catch {
-    return NextResponse.json({ error: "Invalid request" }, { status: 400, headers: { "Cache-Control": "no-store" } });
+    return NextResponse.json({ error: "Unable to start admin session" }, { status: 503, headers: { "Cache-Control": "no-store" } });
   }
 }

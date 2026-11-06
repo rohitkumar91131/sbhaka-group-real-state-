@@ -1,14 +1,18 @@
 import { NextRequest, NextResponse } from "next/server";
-import { ADMIN_COOKIE_NAME, verifyAdminSession } from "../../../../lib/admin-auth";
+import { ACCESS_COOKIE_NAME, authenticateAdminAccessToken } from "../../../../lib/admin-auth";
 import { getMongoClient } from "../../../../lib/mongodb";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
 export async function GET(request: NextRequest) {
-  const password = process.env.ADMIN_PASSWORD;
-  const session = request.cookies.get(ADMIN_COOKIE_NAME)?.value;
-  if (!password || !verifyAdminSession(session, password)) {
+  let sid: string | null;
+  try {
+    sid = await authenticateAdminAccessToken(request.cookies.get(ACCESS_COOKIE_NAME)?.value);
+  } catch {
+    return NextResponse.json({ error: "Unable to verify admin session" }, { status: 503, headers: { "Cache-Control": "private, no-store" } });
+  }
+  if (!sid) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401, headers: { "Cache-Control": "private, no-store" } });
   }
 

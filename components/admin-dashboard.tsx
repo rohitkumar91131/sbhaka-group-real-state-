@@ -21,7 +21,12 @@ export function AdminDashboard({ copy }: { copy: AdminCopy }) {
   const [error, setError] = useState("");
 
   async function loadEnquiries() {
-    const response = await fetch("/api/admin/enquiries", { cache: "no-store" });
+    let response = await fetch("/api/admin/enquiries", { cache: "no-store" });
+    if (response.status === 401) {
+      const refreshResponse = await fetch("/api/admin/refresh", { method: "POST" });
+      if (!refreshResponse.ok) throw new Error("Admin session expired");
+      response = await fetch("/api/admin/enquiries", { cache: "no-store" });
+    }
     if (!response.ok) throw new Error("Unable to load enquiries");
     const data = await response.json() as { enquiries: Enquiry[] };
     setEnquiries(data.enquiries);
@@ -33,6 +38,19 @@ export function AdminDashboard({ copy }: { copy: AdminCopy }) {
       .catch(() => undefined)
       .finally(() => setChecking(false));
   }, []);
+
+  useEffect(() => {
+    if (!authenticated) return;
+    const refreshTimer = window.setInterval(async () => {
+      const response = await fetch("/api/admin/refresh", { method: "POST" });
+      if (!response.ok) {
+        setAuthenticated(false);
+        setEnquiries([]);
+        setError(copy.loadErrorMessage);
+      }
+    }, 10 * 60 * 1000);
+    return () => window.clearInterval(refreshTimer);
+  }, [authenticated, copy.loadErrorMessage]);
 
   async function handleLogin(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -59,9 +77,15 @@ export function AdminDashboard({ copy }: { copy: AdminCopy }) {
   }
 
   async function handleLogout() {
-    await fetch("/api/admin/logout", { method: "POST" });
-    setAuthenticated(false);
-    setEnquiries([]);
+    try {
+      await fetch("/api/admin/refresh", { method: "DELETE" });
+    } catch {
+      // Local state is cleared even if the logout request cannot reach the server.
+    } finally {
+      setError("");
+      setAuthenticated(false);
+      setEnquiries([]);
+    }
   }
 
   if (checking && !authenticated) {
