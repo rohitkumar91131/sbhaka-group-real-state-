@@ -5,21 +5,21 @@
   },
   "theme": {
     "light": {
-      "--paper": "#F2EEE4", "--paper-dim": "#E9E3D4", "--ink": "#24211B", "--ink-soft": "#57534A",
-      "--navy": "#1C2B39", "--navy-soft": "#2F4356", "--clay": "#A85736", "--clay-soft": "#C97B3D",
-      "--green": "#3B5F3A", "--green-soft": "#56794F", "--line": "rgba(36,33,27,.14)", "--white": "#FBFAF6"
+      "--paper": "#FFFFFF", "--paper-dim": "#F7F8F6", "--ink": "#1A1A1A", "--ink-soft": "#505A54",
+      "--navy": "#0B3D2E", "--navy-soft": "#BF9B30", "--clay": "#0B3D2E", "--clay-soft": "#BF9B30",
+      "--green": "#0B3D2E", "--green-soft": "#27604D", "--line": "#BF9B30", "--white": "#FFFFFF"
     },
     "dark": {
-      "--paper": "#17191A", "--paper-dim": "#1E2021", "--ink": "#EDEAE1", "--ink-soft": "#B7B2A4",
-      "--navy": "#1C2B39", "--navy-soft": "#2F4356", "--clay": "#A85736", "--clay-soft": "#C97B3D",
-      "--green": "#3B5F3A", "--green-soft": "#56794F", "--line": "rgba(237,234,225,.14)", "--white": "#212423"
+      "--paper": "#FFFFFF", "--paper-dim": "#F7F8F6", "--ink": "#1A1A1A", "--ink-soft": "#505A54",
+      "--navy": "#0B3D2E", "--navy-soft": "#BF9B30", "--clay": "#0B3D2E", "--clay-soft": "#BF9B30",
+      "--green": "#0B3D2E", "--green-soft": "#27604D", "--line": "#BF9B30", "--white": "#FFFFFF"
     }
   },
   "brand": {
     "name": "Shabka Ideal",
     "legalName": "Private Limited",
     "tagline": "LOCAL ROOTS. GLOBAL ROUTES.",
-    "logo": "<circle cx=\"24\" cy=\"24\" r=\"23\" stroke=\"currentColor\" stroke-opacity=\".25\"/><path d=\"M12 27L20 19L24 23L30 15L36 24\" stroke=\"var(--clay)\" stroke-width=\"2.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M10 33C14 30 18 30 22 33C26 36 30 36 34 33C36 31.5 37 31 38 30.5\" stroke=\"var(--navy-soft)\" stroke-width=\"2.2\" stroke-linecap=\"round\"/>"
+    "logo": "<circle cx=\"24\" cy=\"24\" r=\"23\" stroke=\"var(--green)\" stroke-opacity=\".7\"/><path d=\"M12 27L20 19L24 23L30 15L36 24\" stroke=\"var(--clay)\" stroke-width=\"2.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M10 33C14 30 18 30 22 33C26 36 30 36 34 33C36 31.5 37 31 38 30.5\" stroke=\"var(--clay-soft)\" stroke-width=\"2.2\" stroke-linecap=\"round\"/>"
   },
   "header": {
     "homeHref": "#top",
