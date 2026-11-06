@@ -23,3 +23,7 @@ footer{background:var(--paper);color:var(--ink);padding:56px 0 28px;border-top:1
 .site-header,.hero,.about,footer,.footer-inner{border:0}.div-card{border:1px solid rgba(11,61,46,.22);background:transparent}
 
 .hero h1.hero-image-title{width:100%;max-width:none;line-height:1;letter-spacing:0}.hero-image-title img{display:block;width:100%;height:auto}
+
+.footer-inner{grid-template-columns:1.1fr 1fr 1fr}.footer-col a.whatsapp-link{display:inline-flex;width:max-content;margin-top:4px;color:var(--green);font-weight:600;border-bottom:1px solid rgba(11,61,46,.28);padding-bottom:3px}.footer-col a.whatsapp-link:hover{border-color:var(--green)}
+@media(max-width:860px){.footer-inner{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.footer-inner{grid-template-columns:1fr}}
