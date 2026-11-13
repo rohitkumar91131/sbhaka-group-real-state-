@@ -5,8 +5,8 @@
   },
   "theme": {
     "light": {
-      "--paper": "#FFFFFF",
-      "--paper-dim": "#F7F8F6",
+      "--paper": "#F8F7F3",
+      "--paper-dim": "#F1F0EA",
       "--ink": "#1A1A1A",
       "--ink-soft": "#505A54",
       "--navy": "#0B3D2E",
@@ -20,8 +20,8 @@
       "--heading-gold": "#806214"
     },
     "dark": {
-      "--paper": "#FFFFFF",
-      "--paper-dim": "#F7F8F6",
+      "--paper": "#F8F7F3",
+      "--paper-dim": "#F1F0EA",
       "--ink": "#1A1A1A",
       "--ink-soft": "#505A54",
       "--navy": "#0B3D2E",
