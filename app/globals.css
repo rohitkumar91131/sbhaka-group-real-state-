@@ -125,7 +125,7 @@ html{scrollbar-width:thin;scrollbar-color:var(--green-soft) var(--paper-dim)}
 .real-estate-title-line{display:block;overflow:hidden}
 .real-estate-title-line-inner{display:block}
 .real-estate-hero-copy .division-summary{max-width:48ch;margin:0}
-.real-estate-hero-visual{position:relative;overflow:hidden;isolation:isolate;aspect-ratio:1.08;border:1px solid rgba(11,61,46,.2);background:var(--paper-dim)}
+.real-estate-hero-visual{position:relative;overflow:hidden;isolation:isolate;aspect-ratio:1.08;border:1px solid rgba(11,61,46,.2);border-radius:4px;background:var(--paper-dim)}
 .real-estate-hero-picture{position:absolute;inset:0;display:block}
 .real-estate-hero-picture img{width:100%;height:100%;object-fit:cover;object-position:center}
 .real-estate-copy{max-width:1244px;display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,76px);margin:clamp(46px,7vw,96px) auto clamp(60px,8vw,112px)}
