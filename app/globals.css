@@ -93,6 +93,7 @@ html{scrollbar-width:thin;scrollbar-color:var(--green-soft) var(--paper-dim)}
 .hero .hero-image-title img{position:absolute;left:-11.36%;top:-63.8%;width:122.85%;max-width:none;height:auto}
 .hero-art{min-width:0;transform-origin:center}
 
+.header-inner{width:100%;max-width:1580px;padding-inline:clamp(28px,4vw,76px)}
 .about .about-inner,.divisions > .wrap,.contact-section .contact-inner,footer > .wrap{width:100%;max-width:1580px;padding-inline:clamp(28px,4vw,76px)}
 
 /* Controls and cards use small, stable feedback transitions. */
@@ -111,11 +112,13 @@ html{scrollbar-width:thin;scrollbar-color:var(--green-soft) var(--paper-dim)}
 .btn-ghost:focus-visible,.about-preview-link:focus-visible,.division-back-link:focus-visible{outline:2px solid var(--clay-soft);outline-offset:4px}
 
 @media(max-width:860px){
+  .header-inner{padding-inline:clamp(28px,5vw,56px)}
   .hero .hero-inner{grid-template-columns:minmax(0,1fr);gap:clamp(24px,5vw,38px);padding-inline:clamp(28px,5vw,56px)}
   .about .about-inner,.divisions > .wrap,.contact-section .contact-inner,footer > .wrap{padding-inline:clamp(28px,5vw,56px)}
   .hero-art{width:min(100%,660px);justify-self:center}
 }
 @media(max-width:520px){
+  .header-inner{padding-inline:22px}
   .hero{padding-block:52px 58px}
   .hero .hero-inner{padding-inline:22px;gap:28px}
   .about .about-inner,.divisions > .wrap,.contact-section .contact-inner,footer > .wrap{padding-inline:22px}
