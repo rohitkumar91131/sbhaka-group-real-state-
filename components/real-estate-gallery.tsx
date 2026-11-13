@@ -83,7 +83,15 @@ const revealSteps = [
 
 export function RealEstateGallery() {
   const root = useRef<HTMLElement>(null);
+  const dialogRef = useRef<HTMLDialogElement>(null);
   const [motionAllowed, setMotionAllowed] = useState(false);
+  const [selectedImage, setSelectedImage] = useState<{
+    src: string;
+    alt: string;
+    width: number;
+    height: number;
+    isGif: boolean;
+  } | null>(null);
   useScrollReveal(root, revealSteps);
 
   useEffect(() => {
@@ -94,6 +102,11 @@ export function RealEstateGallery() {
     return () => preference.removeEventListener("change", update);
   }, []);
 
+  useEffect(() => {
+    const dialog = dialogRef.current;
+    if (selectedImage && dialog && !dialog.open) dialog.showModal();
+  }, [selectedImage]);
+
   return <section ref={root} className="real-estate-gallery" aria-labelledby="real-estate-gallery-title">
     <div className="wrap">
       <div className="real-estate-gallery-heading">
@@ -103,20 +116,52 @@ export function RealEstateGallery() {
         {gallery.map((image, index) => {
           const src = motionAllowed && "motion" in image && image.motion ? image.motion : image.src;
           const isGif = motionAllowed && src.endsWith(".gif");
+          const width = isGif && "motionWidth" in image ? image.motionWidth : image.width;
+          const height = isGif && "motionHeight" in image ? image.motionHeight : image.height;
           return <figure className={`real-estate-gallery-item gallery-item-${index + 1}`} key={image.src}>
             <div className="real-estate-gallery-image">
-              <Image
-                src={src}
-                alt={image.alt}
-                width={isGif && "motionWidth" in image ? image.motionWidth : image.width}
-                height={isGif && "motionHeight" in image ? image.motionHeight : image.height}
-                sizes="(max-width: 520px) 90vw, (max-width: 860px) 45vw, 33vw"
-                unoptimized={isGif}
-              />
+              <button
+                className="real-estate-gallery-open"
+                type="button"
+                aria-label={`Open larger image: ${image.alt}`}
+                onClick={() => setSelectedImage({ src, alt: image.alt, width, height, isGif })}
+              >
+                <Image
+                  src={src}
+                  alt={image.alt}
+                  width={width}
+                  height={height}
+                  sizes="(max-width: 520px) 90vw, (max-width: 860px) 45vw, 33vw"
+                  unoptimized={isGif}
+                />
+              </button>
             </div>
           </figure>;
         })}
       </div>
     </div>
+    <dialog
+      ref={dialogRef}
+      className="real-estate-image-dialog"
+      aria-label="Image preview"
+      onClick={(event) => {
+        if (event.target === event.currentTarget) dialogRef.current?.close();
+      }}
+      onClose={() => setSelectedImage(null)}
+    >
+      {selectedImage && <div className="real-estate-image-dialog-content">
+        <button className="real-estate-image-dialog-close" type="button" autoFocus onClick={() => dialogRef.current?.close()}>
+          <span aria-hidden="true">×</span><span className="sr-only">Close image preview</span>
+        </button>
+        <Image
+          src={selectedImage.src}
+          alt={selectedImage.alt}
+          width={selectedImage.width}
+          height={selectedImage.height}
+          sizes="94vw"
+          unoptimized={selectedImage.isGif}
+        />
+      </div>}
+    </dialog>
   </section>;
 }
