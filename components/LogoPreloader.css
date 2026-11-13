@@ -3,11 +3,15 @@
 .logo-preloader__container{width:min(32vw,220px);aspect-ratio:1;}
 .logo-preloader__container svg{display:block;width:100%;height:100%;overflow:visible}
 .logo-preloader__background{fill:#fff}
-.logo-preloader__draw{fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:100;stroke-dashoffset:100;animation:logo-preloader-draw 1.35s cubic-bezier(.65,0,.35,1) forwards}
-.logo-preloader__chevron{stroke:#0b3d2e;stroke-width:18;animation-delay:.15s}
-.logo-preloader__wave{stroke:#c79d4b;stroke-width:15;animation-delay:.55s}
-.logo-preloader__outer{stroke:#0b3d2e;stroke-width:12;animation-delay:.9s}
-.logo-preloader__inner{stroke:#c79d4b;stroke-width:5;animation-delay:1.2s}
-@keyframes logo-preloader-draw{to{stroke-dashoffset:0}}
+.logo-preloader__draw{fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:100;stroke-dashoffset:100}
+.logo-preloader__chevron{stroke:#0b3d2e;stroke-width:18;animation:logo-preloader-chevron 3.8s ease-in-out infinite}
+.logo-preloader__wave{stroke:#c79d4b;stroke-width:15;animation:logo-preloader-wave 3.8s ease-in-out infinite}
+.logo-preloader__outer{stroke:#0b3d2e;stroke-width:12;animation:logo-preloader-outer 3.8s ease-in-out infinite}
+.logo-preloader__inner{stroke:#c79d4b;stroke-width:5;animation:logo-preloader-inner 3.8s ease-in-out infinite}
+.logo-preloader--exit .logo-preloader__draw{animation-play-state:paused}
+@keyframes logo-preloader-chevron{0%,100%{stroke-dashoffset:100}8%,72%{stroke-dashoffset:0}}
+@keyframes logo-preloader-wave{0%,10%,100%{stroke-dashoffset:100}18%,72%{stroke-dashoffset:0}}
+@keyframes logo-preloader-outer{0%,18%,100%{stroke-dashoffset:100}30%,72%{stroke-dashoffset:0}}
+@keyframes logo-preloader-inner{0%,28%,100%{stroke-dashoffset:100}40%,72%{stroke-dashoffset:0}}
 @media(max-width:520px){.logo-preloader__container{width:min(52vw,180px)}}
-@media(prefers-reduced-motion:reduce){.logo-preloader__draw{animation-duration:.01ms;animation-delay:0s}.logo-preloader{transition-duration:.01ms}}
+@media(prefers-reduced-motion:reduce){.logo-preloader__draw{animation:none;stroke-dashoffset:0}.logo-preloader{transition-duration:.01ms}}
