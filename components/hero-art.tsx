@@ -28,7 +28,7 @@ export function HeroArt({ desktop, mobile, animated, alt }: HeroArtProps) {
         height={415}
         unoptimized
         onLoad={() => {
-          if (window.matchMedia("(min-width: 521px) and (max-width: 900px)").matches) {
+          if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
             setAnimationReady(true);
           }
         }}
