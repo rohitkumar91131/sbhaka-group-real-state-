@@ -14,8 +14,8 @@ const gallery: readonly BusinessGalleryImage[] = [
   { src: "/agro%20images/gallery/Vibrant%20Pepper%20Vine%20Plantation.png", alt: "Rows of vibrant green pepper vines on a plantation", width: 1499, height: 1049 },
 ];
 
-const desktopColumns = [[1, 4, 9], [2, 3, 8, 10], [0, 5, 6, 7]] as const;
-const compactColumns = [[0, 2, 4, 6, 8, 10], [1, 3, 5, 7, 9]] as const;
+const desktopColumns = [[1, 4, 7], [2, 5, 9, 10], [0, 3, 6, 8]] as const;
+const compactColumns = [[0, 1, 4, 6, 9, 10], [2, 3, 5, 7, 8]] as const;
 
 export function AgroGallery() {
   return <BusinessGallery
