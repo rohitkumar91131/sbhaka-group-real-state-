@@ -1,7 +1,7 @@
-.shabka-preloader{position:fixed;inset:0;z-index:999999;display:flex;align-items:center;justify-content:center;background:#050505;opacity:1;transition:opacity .7s ease;overflow:hidden}
+.shabka-preloader{position:fixed;inset:0;z-index:999999;display:flex;align-items:center;justify-content:center;background:#fff;opacity:1;transition:opacity .7s ease;overflow:hidden}
 .shabka-preloader.is-exiting{opacity:0;pointer-events:none}
 .shabka-preloader.is-exiting .mark-svg *{animation-play-state:paused}
-.shabka-preloader__mark{width:min(84vw,470px);aspect-ratio:1;display:flex;align-items:center;justify-content:center}
+.shabka-preloader__mark{width:min(58vw,290px);aspect-ratio:1;display:flex;align-items:center;justify-content:center}
 .mark-svg{width:100%;max-height:85vh;overflow:visible;display:block}
 .line-draw{stroke-dasharray:100;stroke-dashoffset:100;animation:shabkaDraw .9s ease-in-out forwards}
 @keyframes shabkaDraw{to{stroke-dashoffset:0}}
@@ -33,7 +33,7 @@
 .construction-road{opacity:0;transform:translateX(-50px);animation:constructionEnter  .8s ease-out 3.9s forwards}
 @keyframes constructionEnter{to{opacity:1;transform:translate(0,0)}}
 .construction-circle{animation-duration:1.2s;animation-delay:4.7s}
-@media(max-width:768px){.shabka-preloader__mark{width:min(90vw,340px)}}
+@media(max-width:768px){.shabka-preloader__mark{width:min(70vw,250px)}}
 @media(prefers-reduced-motion:reduce){
  .shabka-preloader{transition:none}
  .mark-svg *{animation:none!important}
