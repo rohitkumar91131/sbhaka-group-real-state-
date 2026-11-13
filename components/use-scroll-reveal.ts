@@ -52,9 +52,10 @@ export function useScrollReveal<T extends HTMLElement>(
             };
 
             if (step.triggerEach) {
-              targets.forEach((target) => {
+              targets.forEach((target, targetIndex) => {
                 gsap.fromTo(target, from, {
                   ...to,
+                  delay: targetIndex * (step.stagger ?? 0),
                   scrollTrigger: { trigger: target, start: "top 88%", once: true },
                 });
               });

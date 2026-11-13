@@ -166,3 +166,57 @@ html{scrollbar-width:thin;scrollbar-color:var(--green-soft) var(--paper-dim)}
   .business-gallery-columns,.business-gallery-column{gap:12px}
 }
 @media(prefers-reduced-motion:reduce){.business-gallery-image img{transition:none}}
+
+/* About Us: a quiet, photo-led family story with restrained motion. */
+.about-story{padding:clamp(38px,5vw,76px) 0 clamp(72px,9vw,132px);min-height:0}
+.about-story-hero{max-width:1320px;display:grid;grid-template-columns:minmax(0,1.08fr) minmax(320px,.92fr);align-items:center;gap:clamp(42px,7vw,104px)}
+.about-story-hero-copy{max-width:680px}
+.about-story-eyebrow{margin:0 0 20px;color:var(--green);font-size:13px;font-weight:600;letter-spacing:.075em}
+.about-story-title{max-width:13ch;margin:0 0 24px;color:var(--heading-gold);font-family:'Fraunces',serif;font-size:clamp(44px,5.2vw,68px);font-weight:500;line-height:1.06;letter-spacing:-.025em}
+.about-story-intro,.about-story-copy p{max-width:680px;margin:0;color:var(--ink);font-size:16.5px;line-height:1.85}
+.about-story-image{position:relative;align-self:stretch;min-height:420px;margin:0;overflow:hidden;aspect-ratio:4/5;background:var(--paper-dim)}
+.about-story-image img{object-fit:cover;object-position:center;animation:about-photo-arrive 1.7s cubic-bezier(.2,.7,.25,1) both}
+@keyframes about-photo-arrive{from{transform:scale(1.045);opacity:.84}to{transform:scale(1);opacity:1}}
+.about-story-copy{max-width:744px;margin:clamp(44px,6vw,76px) auto 0;padding-inline:32px}
+.about-businesses{max-width:1320px;margin:clamp(54px,7vw,92px) auto 0}
+.about-businesses h2{max-width:24ch;margin:0 0 clamp(24px,3vw,36px);font-family:'Fraunces',serif;font-size:clamp(30px,3.4vw,42px);font-weight:500;line-height:1.15;color:var(--heading-gold)}
+.about-business-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.about-business-card{display:flex;min-width:0;flex-direction:column;align-items:flex-start;padding:28px 26px 25px;border:1px solid rgba(134,98,29,.32);background:var(--paper);transition:transform .28s ease,border-color .28s ease}
+.about-business-icon{width:56px;height:42px;object-fit:contain;object-position:left center;transition:transform .28s ease}
+.about-business-card h3{margin:20px 0 8px;color:var(--ink);font-family:'Fraunces',serif;font-size:22px;font-weight:500;line-height:1.2}
+.about-business-card p{flex:1;margin:0;color:var(--ink-soft);font-size:14.5px;line-height:1.75}
+.about-business-card a{display:inline-flex;align-items:center;gap:6px;margin-top:22px;padding-bottom:3px;border-bottom:1px solid var(--clay-soft);color:var(--green);font-size:13.5px;font-weight:600;text-decoration:none}
+.about-business-card a:focus-visible{outline:2px solid var(--clay-soft);outline-offset:4px}
+@media(hover:hover) and (pointer:fine){.about-business-card:hover{transform:translateY(-4px);border-color:var(--heading-gold)}.about-business-card:hover .about-business-icon{transform:translateY(-3px)}}
+.about-story-remaining{display:grid;gap:22px;margin-top:clamp(54px,7vw,88px)}
+.about-story-closing{max-width:980px;margin:clamp(70px,10vw,128px) auto 0;text-align:center}
+.about-story-closing-main{max-width:22ch;margin:0 auto 16px;color:var(--heading-gold);font-family:'Fraunces',serif;font-size:clamp(34px,5vw,58px);font-weight:500;line-height:1.12}
+.about-story-closing-support{margin:0;color:var(--ink);font-size:16px;line-height:1.7}
+.about-story-motto{margin:30px 0 0;color:var(--green);font-family:'Fraunces',serif;font-size:clamp(20px,2.4vw,26px);font-style:italic}
+@media(max-width:760px){
+  .about-story{padding-top:36px}
+  .about-story-hero{grid-template-columns:1fr;gap:28px}
+  .about-story-title{font-size:clamp(42px,8vw,58px)}
+  .about-story-image{width:100%;min-height:0;aspect-ratio:4/5}
+  .about-business-grid{grid-template-columns:1fr;gap:14px}
+  .about-business-card{padding:24px}
+}
+@media(max-width:520px){
+  .about-story{padding-bottom:72px}
+  .about-story-hero,.about-businesses,.about-story-closing{padding-inline:22px}
+  .about-story-eyebrow{font-size:12px;margin-bottom:16px}
+  .about-story-title{font-size:clamp(38px,10vw,48px);margin-bottom:18px}
+  .about-story-intro,.about-story-copy p{font-size:15px;line-height:1.8}
+  .about-story-copy{padding-inline:22px;margin-top:34px}
+  .about-businesses{margin-top:48px}
+  .about-businesses h2{font-size:31px}
+  .about-story-remaining{gap:18px;margin-top:50px}
+  .about-story-closing{margin-top:76px}
+  .about-story-closing-main{font-size:36px}
+}
+@media(prefers-reduced-motion:reduce){
+  .about-story-image img{animation:none}
+  .about-business-card,.about-business-icon{transition:none}
+  .about-business-card:hover{transform:none}
+  .about-business-card:hover .about-business-icon{transform:none}
+}
