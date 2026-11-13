@@ -3,7 +3,7 @@
 import { BrandDefs, PreloaderShell, type PreloaderProps } from "./PreloaderShell";
 
 export default function ConstructionsPreloader(props: PreloaderProps) {
-  return <PreloaderShell {...props} label="Loading Shabka Constructions" duration={6300}>
+  return <PreloaderShell {...props} label="Loading Shabka Constructions">
     <svg className="mark-svg construction-mark" viewBox="0 0 800 800" aria-hidden="true">
       <BrandDefs id="construction" />
       <g className="construction-building">

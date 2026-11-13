@@ -3,7 +3,7 @@
 import { BrandDefs, PreloaderShell, type PreloaderProps } from "./PreloaderShell";
 
 export default function ImpexPreloader(props: PreloaderProps) {
-  return <PreloaderShell {...props} label="Loading Shabka Impex" duration={6100}>
+  return <PreloaderShell {...props} label="Loading Shabka Impex">
     <svg className="mark-svg impex-mark" viewBox="0 0 1000 900" aria-hidden="true">
       <BrandDefs id="impex" />
       {/* Globe is behind the foreground trade elements. */}

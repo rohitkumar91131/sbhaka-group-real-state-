@@ -3,7 +3,7 @@
 import { BrandDefs, PreloaderShell, type PreloaderProps } from "./PreloaderShell";
 
 export default function AgroPreloader(props: PreloaderProps) {
-  return <PreloaderShell {...props} label="Loading Shabka Agro" duration={5800}>
+  return <PreloaderShell {...props} label="Loading Shabka Agro">
     <svg className="mark-svg agro-mark" viewBox="0 0 1000 800" aria-hidden="true">
       <BrandDefs id="agro" />
       <defs><clipPath id="agro-reveal"><rect className="agro-reveal-rect" x="0" y="0" width="1000" height="800"/></clipPath></defs>

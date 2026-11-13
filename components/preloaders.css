@@ -1,5 +1,6 @@
 .shabka-preloader{position:fixed;inset:0;z-index:999999;display:flex;align-items:center;justify-content:center;background:#050505;opacity:1;transition:opacity .7s ease;overflow:hidden}
 .shabka-preloader.is-exiting{opacity:0;pointer-events:none}
+.shabka-preloader.is-exiting .mark-svg *{animation-play-state:paused}
 .shabka-preloader__mark{width:min(84vw,470px);aspect-ratio:1;display:flex;align-items:center;justify-content:center}
 .mark-svg{width:100%;max-height:85vh;overflow:visible;display:block}
 .line-draw{stroke-dasharray:100;stroke-dashoffset:100;animation:shabkaDraw .9s ease-in-out forwards}

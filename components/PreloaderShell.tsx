@@ -5,19 +5,23 @@ import "./preloaders.css";
 
 export type PreloaderProps = { onComplete?: () => void };
 
-type Props = PreloaderProps & { children: ReactNode; label: string; duration?: number };
+type Props = PreloaderProps & { children: ReactNode; label: string };
 
-/** Animate once, then fade away and unmount. Duration is the start of fade, not total time. */
-export function PreloaderShell({ children, label, duration = 6000, onComplete }: Props) {
+/** Stay over the page until its initial document load completes, then fade away. */
+export function PreloaderShell({ children, label, onComplete }: Props) {
   const [exiting, setExiting] = useState(false);
   const [visible, setVisible] = useState(true);
   const callback = useRef(onComplete);
   useEffect(() => { callback.current = onComplete; }, [onComplete]);
   useEffect(() => {
-    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    const timer = window.setTimeout(() => setExiting(true), reduced ? 0 : duration);
-    return () => window.clearTimeout(timer);
-  }, [duration]);
+    const finishLoading = () => setExiting(true);
+    if (document.readyState === "complete") {
+      finishLoading();
+    } else {
+      window.addEventListener("load", finishLoading, { once: true });
+    }
+    return () => window.removeEventListener("load", finishLoading);
+  }, []);
   useEffect(() => {
     if (!exiting) return;
     const timer = window.setTimeout(() => {

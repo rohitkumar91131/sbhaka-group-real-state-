@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import site from "../lib.json";
+import RoutePreloader from "../components/RoutePreloader";
 import "./globals.css";
 
 const cssVariables = (values: Record<string, string>) => Object.entries(values).map(([key, value]) => `${key}:${value}`).join(";");
@@ -18,7 +19,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="en">
       <head><style>{`:root{${cssVariables(site.theme.light)}}@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){${cssVariables(site.theme.dark)}}}:root[data-theme="dark"]{${cssVariables(site.theme.dark)}}`}</style></head>
-      <body>{children}</body>
+      <body><RoutePreloader />{children}</body>
     </html>
   );
 }

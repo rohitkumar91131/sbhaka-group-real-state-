@@ -3,7 +3,7 @@
 import { PreloaderShell, type PreloaderProps } from "./PreloaderShell";
 
 export default function MainLogoPreloader(props: PreloaderProps) {
-  return <PreloaderShell {...props} label="Loading Shabka" duration={4900}>
+  return <PreloaderShell {...props} label="Loading Shabka">
     <svg className="mark-svg main-mark" viewBox="0 0 700 700" aria-hidden="true">
       <circle className="main-background" cx="350" cy="350" r="326" fill="white"/>
       <path className="line-draw main-chevron" pathLength={100} d="M195 370 L350 190 L505 370" stroke="#003b2c" strokeWidth="16" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
