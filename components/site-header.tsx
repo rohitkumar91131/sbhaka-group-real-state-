@@ -21,14 +21,17 @@ export function SiteHeader() {
 
       const intro = document.getElementById(site.hero.id);
       const introBounds = intro?.getBoundingClientRect();
-      const isIntroVisible = Boolean(
-        introBounds && introBounds.bottom > 0 && introBounds.top < window.innerHeight,
+      const isIntroBrandingActive = Boolean(
+        introBounds &&
+        introBounds.bottom > 0 &&
+        introBounds.top < window.innerHeight &&
+        introBounds.top > -(introBounds.height * 0.5),
       );
-      if (element.classList.contains("is-logo-intro-visible") !== isIntroVisible) {
-        element.classList.toggle("is-logo-intro-visible", isIntroVisible);
+      if (element.classList.contains("is-logo-intro-branding") !== isIntroBrandingActive) {
+        element.classList.toggle("is-logo-intro-branding", isIntroBrandingActive);
       }
       const brand = element.querySelector<HTMLAnchorElement>(".brand");
-      if (brand && brand.inert !== isIntroVisible) brand.inert = isIntroVisible;
+      if (brand && brand.inert !== isIntroBrandingActive) brand.inert = isIntroBrandingActive;
     };
 
     updateScrollState();
