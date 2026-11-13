@@ -1,0 +1,42 @@
+.shabka-preloader{position:fixed;inset:0;z-index:999999;display:flex;align-items:center;justify-content:center;background:#050505;opacity:1;transition:opacity .7s ease;overflow:hidden}
+.shabka-preloader.is-exiting{opacity:0;pointer-events:none}
+.shabka-preloader__mark{width:min(84vw,470px);aspect-ratio:1;display:flex;align-items:center;justify-content:center}
+.mark-svg{width:100%;max-height:85vh;overflow:visible;display:block}
+.line-draw{stroke-dasharray:100;stroke-dashoffset:100;animation:shabkaDraw .9s ease-in-out forwards}
+@keyframes shabkaDraw{to{stroke-dashoffset:0}}
+/* Main corporate logo: chevron > wave > circles */
+.main-background{opacity:0;animation:shabkaAppear .35s ease .15s forwards}
+.main-chevron{animation-delay:.4s}.main-wave{animation-delay:1.4s}.main-outer{animation-delay:2.4s}.main-inner{animation-delay:3.4s}
+@keyframes shabkaAppear{to{opacity:1}}
+/* Agro: farmland grows > tractor enters > sun rises > circle */
+.agro-reveal-rect{transform:translateY(800px);animation:agroGrow 1.8s ease-out .3s forwards}
+@keyframes agroGrow{to{transform:translateY(0)}}
+.agro-tractor{opacity:0;transform:translateX(-65px);animation:agroTractor .9s cubic-bezier(.2,.8,.2,1) 2.1s forwards}
+@keyframes agroTractor{to{opacity:1;transform:translateX(0)}}
+.agro-sun{opacity:0;transform-box:fill-box;transform-origin:center bottom;transform:translateY(100px) scale(.7);animation:agroSun 1.1s ease-out 3.1s forwards}
+@keyframes agroSun{to{opacity:1;transform:translateY(0) scale(1)}}
+.agro-circle{animation-duration:1.1s;animation-delay:4.2s}
+/* Impex: ship > container > globe > plane > gold trade routes */
+.impex-ship{opacity:0;transform:translateY(80px);animation:impexEnter 1.2s cubic-bezier(.2,.8,.2,1) .2s forwards}
+.impex-container{opacity:0;transform:translateY(45px) scale(.9);transform-origin:center bottom;animation:impexEnter .8s ease-out 1.2s forwards}
+@keyframes impexEnter{to{opacity:1;transform:translate(0,0) scale(1)}}
+.impex-globe-outer{animation-duration:1.3s;animation-delay:2s}.impex-globe-grid{animation-duration:1s;animation-delay:2.6s}
+.impex-plane{opacity:0;transform:translate(-120px,80px) scale(.85);transform-origin:center;animation:impexEnter 1s cubic-bezier(.18,.7,.2,1) 3.5s forwards}
+.impex-gold-top{animation-duration:.8s;animation-delay:4.3s}.impex-gold-right{animation-duration:.8s;animation-delay:4.65s}.impex-gold-bottom{animation-duration:.9s;animation-delay:5s}
+/* Construction: building rises > crane draws > house > gold roads > circle */
+.construction-building{transform-box:fill-box;transform-origin:center bottom;transform:scaleY(0);opacity:0;animation:constructionRise 1.5s cubic-bezier(.2,.8,.2,1) .2s forwards}
+@keyframes constructionRise{to{opacity:1;transform:scaleY(1)}}
+.construction-crane{opacity:0;stroke-dasharray:1600;stroke-dashoffset:1600;animation:constructionDraw 1.2s ease-in-out 1.7s forwards}
+@keyframes constructionDraw{to{opacity:1;stroke-dashoffset:0}}
+.construction-house{opacity:0;transform:translateY(45px);animation:constructionEnter 1s ease-out 2.9s forwards}
+.construction-road{opacity:0;transform:translateX(-50px);animation:constructionEnter  .8s ease-out 3.9s forwards}
+@keyframes constructionEnter{to{opacity:1;transform:translate(0,0)}}
+.construction-circle{animation-duration:1.2s;animation-delay:4.7s}
+@media(max-width:768px){.shabka-preloader__mark{width:min(90vw,340px)}}
+@media(prefers-reduced-motion:reduce){
+ .shabka-preloader{transition:none}
+ .mark-svg *{animation:none!important}
+ .line-draw,.construction-crane{stroke-dashoffset:0}
+ .main-background,.agro-tractor,.agro-sun,.impex-ship,.impex-container,.impex-plane,.construction-building,.construction-crane,.construction-house,.construction-road{opacity:1;transform:none}
+ .agro-reveal-rect{transform:none}
+}
