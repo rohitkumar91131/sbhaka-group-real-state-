@@ -51,11 +51,13 @@ export function ContactForm({ contact, divisions }: { contact: ContactCopy; divi
         </label>
         <label className="contact-field">
           <span>{contact.fields.division.label}</span>
-          <select name="division" defaultValue="" required>
-            <option value="" disabled>{contact.fields.division.placeholder}</option>
-            {divisions.map((division) => <option key={division} value={division}>{division}</option>)}
-            <option value={contact.generalOption}>{contact.generalOption}</option>
-          </select>
+          <span className="contact-select-wrap">
+            <select name="division" defaultValue="" required>
+              <option value="" disabled>{contact.fields.division.placeholder}</option>
+              {divisions.map((division) => <option key={division} value={division}>{division}</option>)}
+              <option value={contact.generalOption}>{contact.generalOption}</option>
+            </select>
+          </span>
         </label>
         <label className="contact-field contact-field-wide">
           <span>{contact.fields.message.label}</span>
