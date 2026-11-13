@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useLayoutEffect, useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import site from "../lib.json";
 import { BrandMark } from "./brand-mark";
@@ -9,7 +9,7 @@ import { ResponsiveNavigation } from "./responsive-navigation";
 export function SiteHeader() {
   const root = useRef<HTMLElement>(null);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const element = root.current;
     if (!element) return;
 
@@ -18,6 +18,17 @@ export function SiteHeader() {
       if (element.classList.contains("is-scrolled") !== isScrolled) {
         element.classList.toggle("is-scrolled", isScrolled);
       }
+
+      const intro = document.getElementById(site.hero.id);
+      const introBounds = intro?.getBoundingClientRect();
+      const isIntroVisible = Boolean(
+        introBounds && introBounds.bottom > 0 && introBounds.top < window.innerHeight,
+      );
+      if (element.classList.contains("is-logo-intro-visible") !== isIntroVisible) {
+        element.classList.toggle("is-logo-intro-visible", isIntroVisible);
+      }
+      const brand = element.querySelector<HTMLAnchorElement>(".brand");
+      if (brand && brand.inert !== isIntroVisible) brand.inert = isIntroVisible;
     };
 
     updateScrollState();
