@@ -37,7 +37,7 @@
   },
   "brand": {
     "name": "Shabka Group",
-    "legalName": "Shabka Group Private Limited",
+    "legalName": "Shabka Ideal Private Limited",
     "tagline": "LOCAL ROOTS. GLOBAL ROUTES.",
     "logo": "<circle cx=\"24\" cy=\"24\" r=\"23\" stroke=\"var(--green)\" stroke-opacity=\".7\"/><path d=\"M12 27L20 19L24 23L30 15L36 24\" stroke=\"var(--clay)\" stroke-width=\"2.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M10 33C14 30 18 30 22 33C26 36 30 36 34 33C36 31.5 37 31 38 30.5\" stroke=\"var(--clay-soft)\" stroke-width=\"2.2\" stroke-linecap=\"round\"/>"
   },
@@ -89,10 +89,10 @@
       "desktop": "/hero%20section/hero-image.png",
       "mobile": "/hero%20section/hero-section-image-mobile.png",
       "animated": "/hero%20section/hero.gif",
-      "alt": "Shabka Group connects construction, agriculture, and global trade."
+      "alt": "Shabka Ideal connects construction, agriculture, and global trade."
     },
     "paragraphs": [
-      "Shabka Group Private Limited is a family-run group, and that single fact shapes everything we do. In a family, trust isn't a policy. It is how you treat people when no one is watching, and it is the first thing we offer every client, partner, and customer who works with us.",
+      "Shabka Ideal Private Limited is a family-run group, and that single fact shapes everything we do. In a family, trust isn't a policy. It is how you treat people when no one is watching, and it is the first thing we offer every client, partner, and customer who works with us.",
       "From the land we deal in and the homes we build, to the goods we source across borders and the fields we are growing into, we bring the same proficiency and the same personal accountability to every venture. We don't believe in doing business at arm's length. We believe in moving forward together."
     ],
     "headingImage": {
@@ -107,7 +107,7 @@
     "label": "About Us",
     "heading": "A Family Business. A Promise of Trust.",
     "paragraphs": [
-      "Shabka Group Private Limited is a family-run company, and that is the heart of who we are. In a family business, your name is on everything you do. There is no hiding behind a brand or a department, which is why we hold ourselves to a standard of honesty and care that no contract could require.",
+      "Shabka Ideal Private Limited is a family-run company, and that is the heart of who we are. In a family business, your name is on everything you do. There is no hiding behind a brand or a department, which is why we hold ourselves to a standard of honesty and care that no contract could require.",
       "Growing up in a family teaches you what relationships really mean: that trust is built slowly, kept carefully, and never taken for granted. We bring that understanding to every client, partner, and community we work with. Today our group spans real estate and land dealing, import and export across many sectors, and agriculture, and each division carries the same values.",
       "Our name carries our ambition. Ideal is not a claim that we are perfect. It is the standard we keep working toward, in every property, every shipment, and every relationship. We take pride in our proficiency, but we take greater pride in being a company people feel comfortable trusting.",
       "We are rooted in India and reaching further, and we intend to move forward the way we always have: together, with our clients, our partners, and our family."
@@ -263,7 +263,7 @@
   },
   "landing": {
     "aboutPreviewHeading": "A Family Business. A Promise of Trust.",
-    "aboutPreviewText": "Shabka Group Private Limited is a family-run company, and that is the heart of who we are. In a family business, your name is on everything you do. There is no hiding behind a brand or a department, which is why we hold ourselves to a standard of honesty and care that no contract could require.",
+    "aboutPreviewText": "Shabka Ideal Private Limited is a family-run company, and that is the heart of who we are. In a family business, your name is on everything you do. There is no hiding behind a brand or a department, which is why we hold ourselves to a standard of honesty and care that no contract could require.",
     "aboutPreviewLink": "Read About Us",
     "aboutPreviewHref": "/about"
   },
