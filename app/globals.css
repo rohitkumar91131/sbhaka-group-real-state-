@@ -174,7 +174,8 @@ html{scrollbar-width:thin;scrollbar-color:var(--green-soft) var(--paper-dim)}
 .about-story-eyebrow{margin:0 0 20px;color:var(--green);font-size:13px;font-weight:600;letter-spacing:.075em}
 .about-story-title{max-width:13ch;margin:0 0 24px;color:var(--heading-gold);font-family:'Fraunces',serif;font-size:clamp(44px,5.2vw,68px);font-weight:500;line-height:1.06;letter-spacing:-.025em}
 .about-story-intro,.about-story-copy p{max-width:680px;margin:0;color:var(--ink);font-size:16.5px;line-height:1.85}
-.about-story-image{position:relative;align-self:stretch;min-height:420px;margin:0;overflow:hidden;aspect-ratio:4/5;background:var(--paper-dim)}
+.about-story-image{position:relative;align-self:stretch;min-height:420px;margin:0;overflow:hidden;aspect-ratio:1/1;background:var(--paper-dim)}
+.about-story-picture{position:absolute;inset:0;display:block}
 .about-story-image img{object-fit:cover;object-position:center;animation:about-photo-arrive 1.7s cubic-bezier(.2,.7,.25,1) both}
 @keyframes about-photo-arrive{from{transform:scale(1.045);opacity:.84}to{transform:scale(1);opacity:1}}
 .about-story-copy{max-width:744px;margin:clamp(44px,6vw,76px) auto 0;padding-inline:32px}
@@ -197,7 +198,7 @@ html{scrollbar-width:thin;scrollbar-color:var(--green-soft) var(--paper-dim)}
   .about-story{padding-top:36px}
   .about-story-hero{grid-template-columns:1fr;gap:28px}
   .about-story-title{font-size:clamp(42px,8vw,58px)}
-  .about-story-image{width:100%;min-height:0;aspect-ratio:4/5}
+  .about-story-image{width:100%;min-height:0;aspect-ratio:2.39/1}
   .about-business-grid{grid-template-columns:1fr;gap:14px}
   .about-business-card{padding:24px}
 }

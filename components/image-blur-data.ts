@@ -39,5 +39,6 @@ export const imageBlurData: Readonly<Record<string, string>> = {
   '/real%20state%20images/gallery%20images/motion-03-plan-detail.gif': 'data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAADQAQCdASoMAAwABIB0JZACdADdgkwZAAD9l7kLAhhEtSFyDFe9y0Uhyb6FgAAA',
   '/real%20state%20images/hero%20image/desktop.png': 'data:image/webp;base64,UklGRjwAAABXRUJQVlA4IDAAAACwAQCdASoMAAwABIB0JZgCdADZiRsEAOG3lbqmjbDdVpcZsawfSrVe5aKsKfsAAAA=',
   '/real%20state%20images/hero%20image/mobile.png': 'data:image/webp;base64,UklGRjYAAABXRUJQVlA4ICoAAADwAQCdASoMAAUABIB0JZgCdAEfUmT+zQAA/j1HlptUgcOWRjNltRRPwAA=',
-  '/about/banyan-legacy.webp': 'data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAADwAQCdASoKAAwABIB0JZgCdAEO9OIGaAAA/uQe+ojlxqEqSuOa0u5vpkwhtqAA',
+  '/about/about-hero-desktop.webp': 'data:image/webp;base64,UklGRjwAAABXRUJQVlA4IDAAAAAQAgCdASoMAAwABIB0JagCdAEO9Ju9NMAAAP672eCBWLomsNPwrg0C5DjmRWEbAAA=',
+  '/about/about-hero-mobile.webp': 'data:image/webp;base64,UklGRjYAAABXRUJQVlA4ICoAAACwAQCdASoMAAUABIB0JagCdADbIP3oAP11XTUmeIvTmPPBoFkC3Hr8AAA=',
 };

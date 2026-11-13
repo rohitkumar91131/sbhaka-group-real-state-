@@ -56,15 +56,18 @@ export function AboutPageContent() {
         <p className="about-story-intro">{paragraphs[0]}</p>
       </div>
       <figure className="about-story-image">
-        <Image
-          src="/about/banyan-legacy.webp"
-          alt="An old banyan tree overlooking a golden Indian valley at sunrise"
-          fill
-          priority
-          sizes="(max-width: 760px) 100vw, (max-width: 1180px) 44vw, 520px"
-          placeholder="blur"
-          blurDataURL={imageBlurData["/about/banyan-legacy.webp"]}
-        />
+        <picture className="about-story-picture">
+          <source media="(max-width: 760px)" srcSet="/about/about-hero-mobile.webp" width={1939} height={811} />
+          <Image
+            src="/about/about-hero-desktop.webp"
+            alt="An old banyan tree overlooking a golden Indian valley at sunrise"
+            fill
+            priority
+            sizes="(max-width: 760px) 100vw, (max-width: 1180px) 44vw, 520px"
+            placeholder="blur"
+            blurDataURL={imageBlurData["/about/about-hero-desktop.webp"]}
+          />
+        </picture>
       </figure>
     </section>
 
