@@ -13,6 +13,22 @@ export function SiteHeader() {
     const element = root.current;
     if (!element) return;
 
+    const updateScrollState = () => {
+      const isScrolled = window.scrollY > 8;
+      if (element.classList.contains("is-scrolled") !== isScrolled) {
+        element.classList.toggle("is-scrolled", isScrolled);
+      }
+    };
+
+    updateScrollState();
+    window.addEventListener("scroll", updateScrollState, { passive: true });
+    return () => window.removeEventListener("scroll", updateScrollState);
+  }, []);
+
+  useEffect(() => {
+    const element = root.current;
+    if (!element) return;
+
     let media: ReturnType<typeof gsap.matchMedia> | undefined;
     const context = gsap.context(() => {
       media = gsap.matchMedia();
