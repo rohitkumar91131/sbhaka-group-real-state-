@@ -8,6 +8,7 @@ import { AnimatedWords } from "./animated-words";
 import { useScrollReveal } from "./use-scroll-reveal";
 import { RealEstateGallery } from "./real-estate-gallery";
 import { ImpexGallery } from "./impex-gallery";
+import { AgroGallery } from "./agro-gallery";
 
 const revealSteps = [
   { selector: ".division-back-link", duration: 0.35, y: 6 },
@@ -83,6 +84,7 @@ export function DivisionPage({ division }: { division: Division }) {
       </div>
       {division.slug === "real-estate" && <RealEstateGallery />}
       {division.slug === "impex" && <ImpexGallery />}
+      {division.slug === "agro" && <AgroGallery />}
     </> : <div className="wrap division-detail-inner">
       <a className="division-back-link" href={site.navigationText.divisionBackHref}>← {site.navigationText.divisionBackLink}</a>
       <h1><AnimatedWords text={division.heading} /></h1>
