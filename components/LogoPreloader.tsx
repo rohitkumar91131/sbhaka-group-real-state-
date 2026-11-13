@@ -1,7 +1,7 @@
 
 "use client";
 
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import "./LogoPreloader.css";
 
 interface LogoPreloaderProps {
@@ -13,19 +13,42 @@ export default function LogoPreloader({
 }: LogoPreloaderProps) {
   const [isVisible, setIsVisible] = useState(true);
   const [isExiting, setIsExiting] = useState(false);
+  const hasCompleted = useRef(false);
 
   useEffect(() => {
     const reducedMotion = window.matchMedia(
       "(prefers-reduced-motion: reduce)"
     ).matches;
+    const minimumDisplayTime = reducedMotion ? 0 : 2550;
+    const startedAt = performance.now();
+    let exitTimer = 0;
 
-    const exitTimer = window.setTimeout(
-      () => setIsExiting(true),
-      reducedMotion ? 0 : 4900
-    );
+    const exitAfterLoad = () => {
+      const remainingAnimationTime = Math.max(
+        0,
+        minimumDisplayTime - (performance.now() - startedAt)
+      );
+      exitTimer = window.setTimeout(() => setIsExiting(true), remainingAnimationTime);
+    };
 
-    return () => window.clearTimeout(exitTimer);
+    if (document.readyState === "complete") {
+      exitAfterLoad();
+    } else {
+      window.addEventListener("load", exitAfterLoad, { once: true });
+    }
+
+    return () => {
+      window.removeEventListener("load", exitAfterLoad);
+      window.clearTimeout(exitTimer);
+    };
   }, []);
+
+  const complete = useCallback(() => {
+    if (hasCompleted.current) return;
+    hasCompleted.current = true;
+    setIsVisible(false);
+    onComplete?.();
+  }, [onComplete]);
 
   const handleTransitionEnd = (
     event: React.TransitionEvent<HTMLDivElement>
@@ -38,20 +61,18 @@ export default function LogoPreloader({
       return;
     }
 
-    setIsVisible(false);
-    onComplete?.();
+    complete();
   };
 
   useEffect(() => {
     if (!isExiting) return;
 
     const fallback = window.setTimeout(() => {
-      setIsVisible(false);
-      onComplete?.();
+      complete();
     }, 750);
 
     return () => window.clearTimeout(fallback);
-  }, [isExiting, onComplete]);
+  }, [isExiting, complete]);
 
   if (!isVisible) return null;
 
