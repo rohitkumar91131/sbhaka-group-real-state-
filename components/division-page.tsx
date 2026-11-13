@@ -11,9 +11,10 @@ import { RealEstateGallery } from "./real-estate-gallery";
 const revealSteps = [
   { selector: ".division-back-link", duration: 0.35, y: 6 },
   { selector: ".real-estate-hero-visual", duration: 0.68, y: 10, position: "-=0.3" },
-  { selector: "h1", duration: 0.5, y: 12 },
+  { selector: ".real-estate-title-line-inner, h1:not(.real-estate-title)", duration: 0.5, y: 12, stagger: 0.08 },
   { selector: ".division-summary", duration: 0.45, y: 8 },
-  { selector: ".division-copy p", duration: 0.48, y: 8, stagger: 0.07 },
+  { selector: ".real-estate-copy p", duration: 0.48, y: 8, triggerEach: true },
+  { selector: ".division-copy:not(.real-estate-copy) p", duration: 0.48, y: 8, stagger: 0.07 },
 ] as const;
 
 export function DivisionPage({ division }: { division: Division }) {
@@ -26,7 +27,13 @@ export function DivisionPage({ division }: { division: Division }) {
       <section className="real-estate-hero wrap">
         <div className="real-estate-hero-copy">
           <a className="division-back-link" href={site.navigationText.divisionBackHref}>← {site.navigationText.divisionBackLink}</a>
-          <h1><AnimatedWords text={division.heading} /></h1>
+          <h1 className="real-estate-title" aria-label={division.heading}>{[
+            division.heading.split(/\s+/).slice(0, 2).join(" "),
+            division.heading.split(/\s+/).slice(2, 4).join(" "),
+            division.heading.split(/\s+/).slice(4).join(" "),
+          ].filter(Boolean).map((line) => <span className="real-estate-title-line" aria-hidden="true" key={line}>
+            <span className="real-estate-title-line-inner">{line}</span>
+          </span>)}</h1>
           <p className="division-summary"><AnimatedWords text={division.summary} /></p>
         </div>
         <div className="real-estate-hero-visual">

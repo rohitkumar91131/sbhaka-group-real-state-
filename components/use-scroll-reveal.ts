@@ -10,6 +10,7 @@ type RevealStep = {
   y?: number;
   stagger?: number;
   position?: string;
+  triggerEach?: boolean;
 };
 
 gsap.registerPlugin(ScrollTrigger);
@@ -40,16 +41,30 @@ export function useScrollReveal<T extends HTMLElement>(
           });
 
           steps.forEach((step, index) => {
+            const targets = element.querySelectorAll<HTMLElement>(step.selector);
+            const from = { autoAlpha: 0, y: isMobile ? Math.min(step.y ?? 12, 8) : step.y ?? 12 };
+            const to = {
+              autoAlpha: 1,
+              y: 0,
+              duration: isMobile ? Math.min(step.duration ?? 0.5, 0.42) : step.duration ?? 0.5,
+              stagger: step.stagger,
+              ease: "power2.out",
+            };
+
+            if (step.triggerEach) {
+              targets.forEach((target) => {
+                gsap.fromTo(target, from, {
+                  ...to,
+                  scrollTrigger: { trigger: target, start: "top 88%", once: true },
+                });
+              });
+              return;
+            }
+
             timeline.fromTo(
-              element.querySelectorAll<HTMLElement>(step.selector),
-              { autoAlpha: 0, y: isMobile ? Math.min(step.y ?? 12, 8) : step.y ?? 12 },
-              {
-                autoAlpha: 1,
-                y: 0,
-                duration: isMobile ? Math.min(step.duration ?? 0.5, 0.42) : step.duration ?? 0.5,
-                stagger: step.stagger,
-                ease: "power2.out",
-              },
+              targets,
+              from,
+              to,
               step.position ?? (index === 0 ? 0 : "-=0.22"),
             );
           });
