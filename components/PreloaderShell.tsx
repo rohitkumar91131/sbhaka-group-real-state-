@@ -15,12 +15,25 @@ export function PreloaderShell({ children, label, onComplete }: Props) {
   useEffect(() => { callback.current = onComplete; }, [onComplete]);
   useEffect(() => {
     const finishLoading = () => setExiting(true);
-    if (document.readyState === "complete") {
+    const fallbackTimer = window.setTimeout(finishLoading, 7000);
+    const handleLoad = () => {
+      window.clearTimeout(fallbackTimer);
       finishLoading();
+    };
+
+    if (document.readyState === "complete") {
+      handleLoad();
     } else {
-      window.addEventListener("load", finishLoading, { once: true });
+      window.addEventListener("load", handleLoad, { once: true });
+      // Recheck after subscribing to avoid missing a load event between the
+      // readyState check and listener registration.
+      if (document.readyState === "complete") handleLoad();
     }
-    return () => window.removeEventListener("load", finishLoading);
+
+    return () => {
+      window.clearTimeout(fallbackTimer);
+      window.removeEventListener("load", handleLoad);
+    };
   }, []);
   useEffect(() => {
     if (!exiting) return;
