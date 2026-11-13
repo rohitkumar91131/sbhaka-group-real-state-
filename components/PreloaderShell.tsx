@@ -5,37 +5,49 @@ import "./preloaders.css";
 
 export type PreloaderProps = { onComplete?: () => void };
 
-type Props = PreloaderProps & { children: ReactNode; label: string };
+type Props = PreloaderProps & { children: ReactNode; label: string; minimumDuration?: number };
 
-/** Stay over the page until its initial document load completes, then fade away. */
-export function PreloaderShell({ children, label, onComplete }: Props) {
+/** Stay over the page until its load and minimum animation time complete, then fade away. */
+export function PreloaderShell({ children, label, onComplete, minimumDuration = 0 }: Props) {
   const [exiting, setExiting] = useState(false);
   const [visible, setVisible] = useState(true);
   const callback = useRef(onComplete);
   useEffect(() => { callback.current = onComplete; }, [onComplete]);
   useEffect(() => {
-    const finishLoading = () => setExiting(true);
-    const isDocumentComplete = () => document.readyState === "complete";
-    const fallbackTimer = window.setTimeout(finishLoading, 7000);
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    let pageLoaded = document.readyState === "complete";
+    let minimumElapsed = reducedMotion || minimumDuration <= 0;
+    const tryFinish = () => {
+      if (pageLoaded && minimumElapsed) setExiting(true);
+    };
+    const fallbackTimer = window.setTimeout(() => {
+      pageLoaded = true;
+      tryFinish();
+    }, 7000);
     const handleLoad = () => {
       window.clearTimeout(fallbackTimer);
-      finishLoading();
+      pageLoaded = true;
+      tryFinish();
     };
+    const minimumTimer = window.setTimeout(() => {
+      minimumElapsed = true;
+      tryFinish();
+    }, reducedMotion ? 0 : minimumDuration);
 
-    if (isDocumentComplete()) {
-      handleLoad();
-    } else {
+    if (pageLoaded) tryFinish();
+    else {
       window.addEventListener("load", handleLoad, { once: true });
       // Recheck after subscribing to avoid missing a load event between the
       // readyState check and listener registration.
-      if (isDocumentComplete()) handleLoad();
+      if (document.readyState === "complete") handleLoad();
     }
 
     return () => {
       window.clearTimeout(fallbackTimer);
+      window.clearTimeout(minimumTimer);
       window.removeEventListener("load", handleLoad);
     };
-  }, []);
+  }, [minimumDuration]);
   useEffect(() => {
     if (!exiting) return;
     const timer = window.setTimeout(() => {
