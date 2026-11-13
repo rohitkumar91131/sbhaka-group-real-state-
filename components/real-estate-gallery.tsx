@@ -76,6 +76,9 @@ const gallery = [
   },
 ] as const;
 
+const desktopColumns = [[1, 5, 9], [2, 3, 8], [0, 4, 6, 7]] as const;
+const compactColumns = [[0, 2, 3, 5, 9], [1, 4, 6, 7, 8]] as const;
+
 const revealSteps = [
   { selector: ".real-estate-gallery-heading", duration: 0.48, y: 10 },
   { selector: ".real-estate-gallery-item", duration: 0.46, y: 12, stagger: 0.06 },
@@ -85,6 +88,7 @@ export function RealEstateGallery() {
   const root = useRef<HTMLElement>(null);
   const dialogRef = useRef<HTMLDialogElement>(null);
   const [motionAllowed, setMotionAllowed] = useState(false);
+  const [columnCount, setColumnCount] = useState(3);
   const [selectedImage, setSelectedImage] = useState<{
     src: string;
     alt: string;
@@ -103,41 +107,55 @@ export function RealEstateGallery() {
   }, []);
 
   useEffect(() => {
+    const compact = window.matchMedia("(max-width: 860px)");
+    const updateColumns = () => setColumnCount(compact.matches ? 2 : 3);
+    updateColumns();
+    compact.addEventListener("change", updateColumns);
+    return () => compact.removeEventListener("change", updateColumns);
+  }, []);
+
+  useEffect(() => {
     const dialog = dialogRef.current;
     if (selectedImage && dialog && !dialog.open) dialog.showModal();
   }, [selectedImage]);
+
+  const renderGalleryItem = (index: number) => {
+    const image = gallery[index];
+    const src = motionAllowed && "motion" in image && image.motion ? image.motion : image.src;
+    const isGif = motionAllowed && src.endsWith(".gif");
+    const width = isGif && "motionWidth" in image ? image.motionWidth : image.width;
+    const height = isGif && "motionHeight" in image ? image.motionHeight : image.height;
+
+    return <figure className={`real-estate-gallery-item gallery-item-${index + 1}`} key={image.src}>
+      <div className="real-estate-gallery-image">
+        <button
+          className="real-estate-gallery-open"
+          type="button"
+          aria-label={`Open larger image: ${image.alt}`}
+          onClick={() => setSelectedImage({ src, alt: image.alt, width, height, isGif })}
+        >
+          <Image
+            src={src}
+            alt={image.alt}
+            width={width}
+            height={height}
+            sizes="(max-width: 520px) 90vw, (max-width: 860px) 45vw, 33vw"
+            unoptimized={isGif}
+          />
+        </button>
+      </div>
+    </figure>;
+  };
 
   return <section ref={root} className="real-estate-gallery" aria-labelledby="real-estate-gallery-title">
     <div className="wrap">
       <div className="real-estate-gallery-heading">
         <h2 id="real-estate-gallery-title">Land, homes, and the details that bring them to life.</h2>
       </div>
-      <div className="real-estate-gallery-masonry">
-        {gallery.map((image, index) => {
-          const src = motionAllowed && "motion" in image && image.motion ? image.motion : image.src;
-          const isGif = motionAllowed && src.endsWith(".gif");
-          const width = isGif && "motionWidth" in image ? image.motionWidth : image.width;
-          const height = isGif && "motionHeight" in image ? image.motionHeight : image.height;
-          return <figure className={`real-estate-gallery-item gallery-item-${index + 1}`} key={image.src}>
-            <div className="real-estate-gallery-image">
-              <button
-                className="real-estate-gallery-open"
-                type="button"
-                aria-label={`Open larger image: ${image.alt}`}
-                onClick={() => setSelectedImage({ src, alt: image.alt, width, height, isGif })}
-              >
-                <Image
-                  src={src}
-                  alt={image.alt}
-                  width={width}
-                  height={height}
-                  sizes="(max-width: 520px) 90vw, (max-width: 860px) 45vw, 33vw"
-                  unoptimized={isGif}
-                />
-              </button>
-            </div>
-          </figure>;
-        })}
+      <div className="real-estate-gallery-columns">
+        {(columnCount === 3 ? desktopColumns : compactColumns).map((column, columnIndex) => <div className="real-estate-gallery-column" key={columnIndex}>
+          {column.map(renderGalleryItem)}
+        </div>)}
       </div>
     </div>
     <dialog
