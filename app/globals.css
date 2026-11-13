@@ -131,17 +131,17 @@ html{scrollbar-width:thin;scrollbar-color:var(--green-soft) var(--paper-dim)}
 .real-estate-gallery{padding:clamp(54px,7vw,96px) 0;background:var(--paper-dim)}
 .real-estate-gallery-heading{max-width:760px;margin:0 0 clamp(28px,4vw,52px)}
 .real-estate-gallery-heading h2{max-width:17ch;margin:0;font-family:'Fraunces',serif;font-size:clamp(30px,4vw,46px);font-weight:500;line-height:1.12;color:var(--heading-gold)}
-.real-estate-gallery-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(12px,1.5vw,22px);align-items:stretch}
-.real-estate-gallery-item{display:flex;min-width:0;margin:0;flex-direction:column}
-.real-estate-gallery-image{width:100%;aspect-ratio:1.2;overflow:hidden;background:var(--paper)}
-.real-estate-gallery-image img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .55s cubic-bezier(.2,.75,.25,1)}
+.real-estate-gallery-masonry{columns:3;column-gap:clamp(12px,1.5vw,22px);column-fill:balance}
+.real-estate-gallery-item{display:inline-block;break-inside:avoid;width:100%;margin:0 0 clamp(12px,1.5vw,22px);vertical-align:top}
+.real-estate-gallery-image{width:100%;overflow:hidden;background:var(--paper)}
+.real-estate-gallery-image img{display:block;width:100%;height:auto;object-fit:contain;transition:transform .55s cubic-bezier(.2,.75,.25,1)}
 @media(hover:hover) and (pointer:fine){.real-estate-gallery-item:hover .real-estate-gallery-image img{transform:scale(1.025)}}
 @media(max-width:860px){
   .real-estate-hero{grid-template-columns:1fr;gap:30px}
   .real-estate-hero-copy h1{max-width:16ch;font-size:clamp(40px,7vw,58px)}
   .real-estate-hero-visual{aspect-ratio:1.5}
   .real-estate-copy{gap:26px}
-  .real-estate-gallery-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .real-estate-gallery-masonry{columns:2}
 }
 @media(max-width:520px){
   .division-detail-real-estate{padding-top:38px}
@@ -149,7 +149,7 @@ html{scrollbar-width:thin;scrollbar-color:var(--green-soft) var(--paper-dim)}
   .real-estate-hero-copy h1{font-size:clamp(38px,10vw,48px);margin:20px 0 14px}
   .real-estate-hero-visual{aspect-ratio:1.9}
   .real-estate-copy{grid-template-columns:1fr;gap:18px;margin-block:34px 48px}
-  .real-estate-gallery-grid{gap:12px}
-  .real-estate-gallery-image{aspect-ratio:1}
+  .real-estate-gallery-masonry{column-gap:12px}
+  .real-estate-gallery-item{margin-bottom:12px}
 }
 @media(prefers-reduced-motion:reduce){.real-estate-gallery-image img{transition:none}}

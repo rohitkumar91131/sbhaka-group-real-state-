@@ -8,6 +8,8 @@ const gallery = [
   {
     src: "/real%20state%20images/gallery%20images/01-land-plot-aerial.png",
     motion: "/real%20state%20images/gallery%20images/motion-01-land-drift.gif",
+    motionWidth: 420,
+    motionHeight: 240,
     alt: "Aerial view of a cleared land plot bordered by trees",
     width: 1672,
     height: 941,
@@ -21,6 +23,8 @@ const gallery = [
   {
     src: "/real%20state%20images/gallery%20images/03-completed-home.png",
     motion: "/real%20state%20images/gallery%20images/motion-02-home-reveal.gif",
+    motionWidth: 320,
+    motionHeight: 400,
     alt: "Completed modern home set among mature trees and planting",
     width: 1086,
     height: 1448,
@@ -28,6 +32,8 @@ const gallery = [
   {
     src: "/real%20state%20images/gallery%20images/04-planning-materials.png",
     motion: "/real%20state%20images/gallery%20images/motion-03-plan-detail.gif",
+    motionWidth: 360,
+    motionHeight: 360,
     alt: "Architectural site plan and material samples arranged on a table",
     width: 1254,
     height: 1254,
@@ -93,7 +99,7 @@ export function RealEstateGallery() {
       <div className="real-estate-gallery-heading">
         <h2 id="real-estate-gallery-title">Land, homes, and the details that bring them to life.</h2>
       </div>
-      <div className="real-estate-gallery-grid">
+      <div className="real-estate-gallery-masonry">
         {gallery.map((image, index) => {
           const src = motionAllowed && "motion" in image && image.motion ? image.motion : image.src;
           const isGif = motionAllowed && src.endsWith(".gif");
@@ -102,8 +108,8 @@ export function RealEstateGallery() {
               <Image
                 src={src}
                 alt={image.alt}
-                width={image.width}
-                height={image.height}
+                width={isGif && "motionWidth" in image ? image.motionWidth : image.width}
+                height={isGif && "motionHeight" in image ? image.motionHeight : image.height}
                 sizes="(max-width: 520px) 90vw, (max-width: 860px) 45vw, 33vw"
                 unoptimized={isGif}
               />
