@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { useScrollReveal } from "./use-scroll-reveal";
+import { imageBlurData } from "./image-blur-data";
 
 export type BusinessGalleryImage = {
   src: string;
@@ -38,6 +39,7 @@ export function BusinessGallery({ gallery, title, titleId, desktopColumns, compa
     width: number;
     height: number;
     isGif: boolean;
+    blurDataURL?: string;
   } | null>(null);
   useScrollReveal(root, revealSteps);
 
@@ -68,6 +70,7 @@ export function BusinessGallery({ gallery, title, titleId, desktopColumns, compa
     const isGif = motionAllowed && src.endsWith(".gif");
     const width = isGif ? image.motionWidth ?? image.width : image.width;
     const height = isGif ? image.motionHeight ?? image.height : image.height;
+    const blurDataURL = imageBlurData[src];
 
     return <figure className="business-gallery-item" key={image.src}>
       <div className="business-gallery-image">
@@ -75,7 +78,7 @@ export function BusinessGallery({ gallery, title, titleId, desktopColumns, compa
           className="business-gallery-open"
           type="button"
           aria-label={`Open larger image: ${image.alt}`}
-          onClick={() => setSelectedImage({ src, alt: image.alt, width, height, isGif })}
+          onClick={() => setSelectedImage({ src, alt: image.alt, width, height, isGif, blurDataURL })}
         >
           <Image
             src={src}
@@ -84,6 +87,8 @@ export function BusinessGallery({ gallery, title, titleId, desktopColumns, compa
             height={height}
             sizes="(max-width: 520px) 90vw, (max-width: 860px) 45vw, 33vw"
             unoptimized={isGif}
+            placeholder={blurDataURL ? "blur" : "empty"}
+            blurDataURL={blurDataURL}
           />
         </button>
       </div>
@@ -121,6 +126,8 @@ export function BusinessGallery({ gallery, title, titleId, desktopColumns, compa
           height={selectedImage.height}
           sizes="94vw"
           unoptimized={selectedImage.isGif}
+          placeholder={selectedImage.blurDataURL ? "blur" : "empty"}
+          blurDataURL={selectedImage.blurDataURL}
         />
       </div>}
     </dialog>

@@ -9,6 +9,7 @@ import { useScrollReveal } from "./use-scroll-reveal";
 import { RealEstateGallery } from "./real-estate-gallery";
 import { ImpexGallery } from "./impex-gallery";
 import { AgroGallery } from "./agro-gallery";
+import { imageBlurData } from "./image-blur-data";
 
 const revealSteps = [
   { selector: ".division-back-link", duration: 0.35, y: 6 },
@@ -75,6 +76,8 @@ export function DivisionPage({ division }: { division: Division }) {
               fill
               priority
               sizes="(max-width: 520px) 100vw, (max-width: 860px) 90vw, 48vw"
+              placeholder="blur"
+              blurDataURL={imageBlurData[photoPage.desktop]}
             />
           </picture>
         </div>
