@@ -4,7 +4,8 @@ import { HeroSection } from "../components/hero-section";
 import { SiteFooter } from "../components/site-footer";
 import { SiteHeader } from "../components/site-header";
 import { ContactSection } from "../components/contact-section";
+import LogoPreloader from "../components/LogoPreloader";
 
 export default function Home() {
-  return <><SiteHeader /><main><HeroSection /><AboutSection /><DivisionsSection /><ContactSection /></main><SiteFooter /></>;
+  return <><LogoPreloader /><SiteHeader /><main><HeroSection /><AboutSection /><DivisionsSection /><ContactSection /></main><SiteFooter /></>;
 }
