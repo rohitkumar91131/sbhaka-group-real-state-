@@ -37,7 +37,7 @@ export function HeroSection() {
     };
   }, []);
 
-  return <section ref={root} className="hero" id={hero.id}><div className="hero-inner"><div className="hero-copy">
+  return <section ref={root} className="hero" id="home-hero"><div className="hero-inner"><div className="hero-copy">
     <h1 className="hero-image-title"><AnimatedReveal><Image src={hero.headingImage.src} alt={hero.headingImage.alt} width={hero.headingImage.width} height={hero.headingImage.height} priority sizes="(max-width: 860px) 90vw, 42vw" /></AnimatedReveal></h1>
     <p className="hero-subtitle"><AnimatedWords text={hero.subtitle} /></p>
     {hero.paragraphs.map((paragraph) => <p className="hero-description" key={paragraph}>{paragraph}</p>)}

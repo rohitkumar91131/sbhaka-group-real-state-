@@ -98,6 +98,24 @@ html{scrollbar-width:thin;scrollbar-color:var(--green-soft) var(--paper-dim)}
 .header-inner{width:100%;max-width:1580px;padding-inline:clamp(28px,4vw,76px)}
 .about .about-inner,.divisions > .wrap,.contact-section .contact-inner,footer > .wrap{width:100%;max-width:1580px;padding-inline:clamp(28px,4vw,76px)}
 
+.logo-intro{position:relative;display:grid;width:100%;height:100vh;height:100dvh;min-height:100vh;min-height:100dvh;place-items:center;overflow:hidden;background:var(--paper)}
+.logo-intro-stage{display:grid;justify-items:center;width:min(88vw,520px);padding:36px 0 64px;text-align:center}
+.logo-intro-mark-wrap{position:relative;display:grid;width:min(58vw,300px);aspect-ratio:1;place-items:center}
+.logo-intro-mark-wrap::before,.logo-intro-mark-wrap::after{position:absolute;top:50%;left:50%;aspect-ratio:1;border:1px solid rgba(11,61,46,.13);border-radius:50%;content:"";pointer-events:none;transform:translate(-50%,-50%);animation:logo-intro-orbit 1.2s ease-out both}
+.logo-intro-mark-wrap::before{width:150%;border-color:rgba(11,61,46,.14)}
+.logo-intro-mark-wrap::after{width:195%;border-color:rgba(191,155,48,.17);animation-delay:.18s}
+.logo-intro-mark{position:relative;z-index:1;width:100%;height:100%;max-height:none}
+.logo-intro-wordmark{position:relative;z-index:1;margin-top:10px;animation:logo-intro-rise .7s cubic-bezier(.2,.75,.25,1) 1.2s both}
+.logo-intro-brand{margin:0;color:var(--green);font-family:'Fraunces',serif;font-size:clamp(28px,4vw,42px);font-weight:600;letter-spacing:.16em;line-height:1;text-transform:uppercase}
+.logo-intro-legal{margin:7px 0 0;color:var(--ink-soft);font-size:10px;font-weight:600;letter-spacing:.22em;text-transform:uppercase}
+.logo-intro-tagline{margin:24px 0 0;color:var(--green);font-family:'Fraunces',serif;font-size:18px;font-style:italic}
+.logo-intro-scroll{position:absolute;bottom:clamp(26px,5vh,48px);left:50%;display:grid;justify-items:center;gap:9px;color:var(--green);font-size:10px;font-weight:600;letter-spacing:.2em;text-decoration:none;text-transform:uppercase;transform:translateX(-50%)}
+.logo-intro-scroll i{display:block;width:1px;height:32px;background:var(--clay-soft);transform-origin:top;animation:logo-intro-scroll 1.25s ease-in-out infinite}
+.logo-intro-scroll:focus-visible{outline:2px solid var(--clay-soft);outline-offset:6px}
+@keyframes logo-intro-rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+@keyframes logo-intro-orbit{from{opacity:0;transform:translate(-50%,-50%) scale(.94)}to{opacity:1;transform:translate(-50%,-50%) scale(1)}}
+@keyframes logo-intro-scroll{0%,100%{transform:scaleY(.55);opacity:.55}50%{transform:scaleY(1);opacity:1}}
+
 /* Controls and cards use small, stable feedback transitions. */
 @media (hover:hover) and (pointer:fine){
   .site-nav a:not(.contact-link){position:relative}
@@ -126,7 +144,10 @@ html{scrollbar-width:thin;scrollbar-color:var(--green-soft) var(--paper-dim)}
   .about .about-inner,.divisions > .wrap,.contact-section .contact-inner,footer > .wrap{padding-inline:22px}
   .hero .hero-image-title .animated-reveal{aspect-ratio:1361/398}
 }
+@media(max-height:560px){.logo-intro-stage{padding-block:28px 48px}.logo-intro-mark-wrap{width:min(40vh,190px)}.logo-intro-tagline{margin-top:14px}}
 @media(prefers-reduced-motion:reduce){
+  .logo-intro-wordmark,.logo-intro-mark-wrap::before,.logo-intro-mark-wrap::after,.logo-intro-scroll i{animation:none}
+  .logo-intro-wordmark{opacity:1;transform:none}
   .site-header,.site-nav a:not(.contact-link)::after,.div-card,.div-card .div-link span,.btn-primary,.btn-ghost{transition:none}
   .div-card:hover,.btn-primary:hover,.btn-ghost:hover,.btn-primary:active,.btn-ghost:active{transform:none}
 }

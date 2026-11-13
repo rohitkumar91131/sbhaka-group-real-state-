@@ -4,8 +4,8 @@ import { HeroSection } from "../components/hero-section";
 import { SiteFooter } from "../components/site-footer";
 import { SiteHeader } from "../components/site-header";
 import { ContactSection } from "../components/contact-section";
-import MainLogoPreloader from "../components/MainLogoPreloader";
+import { LogoIntroSection } from "../components/logo-intro-section";
 
 export default function Home() {
-  return <><MainLogoPreloader /><SiteHeader /><main><HeroSection /><AboutSection /><DivisionsSection /><ContactSection /></main><SiteFooter /></>;
+  return <><SiteHeader /><main><LogoIntroSection /><HeroSection /><AboutSection /><DivisionsSection /><ContactSection /></main><SiteFooter /></>;
 }
