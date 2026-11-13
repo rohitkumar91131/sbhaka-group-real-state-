@@ -242,6 +242,10 @@
             "href": "mailto:info@shabkagroup.com"
           },
           {
+            "label": "shabkagroup@gmail.com",
+            "href": "mailto:shabkagroup@gmail.com"
+          },
+          {
             "label": "shabkagroup.com",
             "href": "https://shabkagroup.com",
             "external": true
