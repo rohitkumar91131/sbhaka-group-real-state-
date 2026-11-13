@@ -69,6 +69,8 @@ html{scrollbar-width:thin;scrollbar-color:var(--green-soft) var(--paper-dim)}
 .hero .hero-image-title img{position:absolute;left:-11.36%;top:-63.8%;width:122.85%;max-width:none;height:auto}
 .hero-art{min-width:0;transform-origin:center}
 
+.about .about-inner,.divisions > .wrap{width:100%;max-width:1580px;padding-inline:clamp(28px,4vw,76px)}
+
 /* Controls and cards use small, stable feedback transitions. */
 @media (hover:hover) and (pointer:fine){
   .site-nav a:not(.contact-link){position:relative}
@@ -86,11 +88,13 @@ html{scrollbar-width:thin;scrollbar-color:var(--green-soft) var(--paper-dim)}
 
 @media(max-width:860px){
   .hero .hero-inner{grid-template-columns:minmax(0,1fr);gap:clamp(24px,5vw,38px);padding-inline:clamp(28px,5vw,56px)}
+  .about .about-inner,.divisions > .wrap{padding-inline:clamp(28px,5vw,56px)}
   .hero-art{width:min(100%,660px);justify-self:center}
 }
 @media(max-width:520px){
   .hero{padding-block:52px 58px}
   .hero .hero-inner{padding-inline:22px;gap:28px}
+  .about .about-inner,.divisions > .wrap{padding-inline:22px}
   .hero .hero-image-title .animated-reveal{aspect-ratio:1361/398}
 }
 @media(prefers-reduced-motion:reduce){
