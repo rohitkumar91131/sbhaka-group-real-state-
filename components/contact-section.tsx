@@ -21,6 +21,7 @@ export function ContactSection() {
         <div className="contact-copy">
           <h2 id="contact-heading">{contact.heading}</h2>
           <p>{contact.intro}</p>
+          <a className="contact-email" href={`mailto:${contact.emailAddress}`}>{contact.emailAddress}</a>
         </div>
         <ContactForm contact={contact} divisions={site.divisions.items.map(({ name }) => name)} />
       </div>
