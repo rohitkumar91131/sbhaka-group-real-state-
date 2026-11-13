@@ -117,52 +117,52 @@ html{scrollbar-width:thin;scrollbar-color:var(--green-soft) var(--paper-dim)}
   .about{padding-top:32px}
 }
 
-/* Real Estate page: a photo-led editorial layout using the supplied project imagery. */
-.division-detail-real-estate{padding:clamp(42px,5.4vw,82px) 0 0;min-height:0}
-.real-estate-hero{max-width:1500px;display:grid;grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);gap:clamp(32px,5vw,78px);align-items:center}
-.real-estate-hero-copy{min-width:0}
-.real-estate-hero-copy h1{max-width:none;font-size:clamp(42px,5vw,68px);line-height:1.04;margin:26px 0 20px}
-.real-estate-title-line{display:block;overflow:hidden}
-.real-estate-title-line-inner{display:block}
-.real-estate-hero-copy .division-summary{max-width:48ch;margin:0}
-.real-estate-hero-visual{position:relative;overflow:hidden;isolation:isolate;aspect-ratio:1.08;border:1px solid rgba(11,61,46,.2);border-radius:4px;background:var(--paper-dim)}
-.real-estate-hero-picture{position:absolute;inset:0;display:block}
-.real-estate-hero-picture img{width:100%;height:100%;object-fit:cover;object-position:center}
-.real-estate-copy{max-width:1244px;display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,76px);margin:clamp(46px,7vw,96px) auto clamp(60px,8vw,112px)}
-.real-estate-copy p{max-width:58ch;margin:0}
-.real-estate-gallery{padding:clamp(54px,7vw,96px) 0}
-.real-estate-gallery > .wrap{width:min(100%,2200px);max-width:2200px;padding-inline:clamp(24px,4vw,76px)}
-.real-estate-gallery-heading{max-width:760px;margin:0 0 clamp(28px,4vw,52px)}
-.real-estate-gallery-heading h2{max-width:17ch;margin:0;font-family:'Fraunces',serif;font-size:clamp(30px,4vw,46px);font-weight:500;line-height:1.12;color:var(--heading-gold)}
-.real-estate-gallery-columns{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(14px,1.5vw,22px);align-items:stretch}
-.real-estate-gallery-column{display:flex;min-width:0;flex-direction:column;justify-content:space-between;gap:clamp(14px,1.5vw,22px)}
-.real-estate-gallery-item{display:block;width:100%;margin:0}
-.real-estate-gallery-image{width:100%;overflow:hidden;background:var(--paper)}
-.real-estate-gallery-image img{display:block;width:100%;height:auto;object-fit:contain;transition:transform .55s cubic-bezier(.2,.75,.25,1)}
-.real-estate-gallery-open{display:block;width:100%;padding:0;border:0;background:transparent;line-height:0;cursor:zoom-in}
-.real-estate-gallery-open:focus-visible{outline:3px solid var(--clay-soft);outline-offset:4px}
-@media(hover:hover) and (pointer:fine){.real-estate-gallery-item:hover .real-estate-gallery-image img{transform:scale(1.025)}}
-.real-estate-image-dialog{position:fixed;inset:0;width:100vw;height:100vh;height:100dvh;max-width:none;max-height:none;margin:0;padding:52px 16px 16px;border:0;background:transparent;overflow:hidden}
-.real-estate-image-dialog[open]{display:grid;place-items:center}
-.real-estate-image-dialog::backdrop{background:rgba(18,27,22,.9)}
-.real-estate-image-dialog-content{position:relative;display:grid;place-items:center;width:100%;height:100%}
-.real-estate-image-dialog-content img{display:block;width:auto;height:auto;max-width:94vw;max-height:84vh;max-height:84dvh;object-fit:contain}
-.real-estate-image-dialog-close{position:fixed;top:16px;right:16px;display:grid;width:44px;height:44px;place-items:center;border:1px solid rgba(255,255,255,.55);border-radius:50%;background:rgba(12,47,36,.92);color:#fff;font:300 32px/1 'Inter',sans-serif;cursor:pointer}
-.real-estate-image-dialog-close:focus-visible{outline:3px solid var(--clay-soft);outline-offset:3px}
+/* Business division pages share a photo-led editorial layout and motion. */
+.division-detail-business{padding:clamp(42px,5.4vw,82px) 0 0;min-height:0}
+.business-hero{max-width:1500px;display:grid;grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);gap:clamp(32px,5vw,78px);align-items:center}
+.business-hero-copy{min-width:0}
+.business-hero-copy h1{max-width:none;font-size:clamp(42px,5vw,68px);line-height:1.04;margin:26px 0 20px}
+.business-title-line{display:block;overflow:hidden}
+.business-title-line-inner{display:block}
+.business-hero-copy .division-summary{max-width:48ch;margin:0}
+.business-hero-visual{position:relative;overflow:hidden;isolation:isolate;aspect-ratio:1.08;border:1px solid rgba(11,61,46,.2);border-radius:4px;background:var(--paper-dim)}
+.business-hero-picture{position:absolute;inset:0;display:block}
+.business-hero-picture img{width:100%;height:100%;object-fit:cover;object-position:center}
+.business-copy{max-width:1244px;display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,76px);margin:clamp(46px,7vw,96px) auto clamp(60px,8vw,112px)}
+.business-copy p{max-width:58ch;margin:0}
+.business-gallery{padding:clamp(54px,7vw,96px) 0}
+.business-gallery > .wrap{width:min(100%,2200px);max-width:2200px;padding-inline:clamp(24px,4vw,76px)}
+.business-gallery-heading{max-width:760px;margin:0 0 clamp(28px,4vw,52px)}
+.business-gallery-heading h2{max-width:17ch;margin:0;font-family:'Fraunces',serif;font-size:clamp(30px,4vw,46px);font-weight:500;line-height:1.12;color:var(--heading-gold)}
+.business-gallery-columns{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(14px,1.5vw,22px);align-items:stretch}
+.business-gallery-column{display:flex;min-width:0;flex-direction:column;justify-content:space-between;gap:clamp(14px,1.5vw,22px)}
+.business-gallery-item{display:block;width:100%;margin:0}
+.business-gallery-image{width:100%;overflow:hidden;background:var(--paper)}
+.business-gallery-image img{display:block;width:100%;height:auto;object-fit:contain;transition:transform .55s cubic-bezier(.2,.75,.25,1)}
+.business-gallery-open{display:block;width:100%;padding:0;border:0;background:transparent;line-height:0;cursor:zoom-in}
+.business-gallery-open:focus-visible{outline:3px solid var(--clay-soft);outline-offset:4px}
+@media(hover:hover) and (pointer:fine){.business-gallery-item:hover .business-gallery-image img{transform:scale(1.025)}}
+.business-image-dialog{position:fixed;inset:0;width:100vw;height:100vh;height:100dvh;max-width:none;max-height:none;margin:0;padding:52px 16px 16px;border:0;background:transparent;overflow:hidden}
+.business-image-dialog[open]{display:grid;place-items:center}
+.business-image-dialog::backdrop{background:rgba(18,27,22,.9)}
+.business-image-dialog-content{position:relative;display:grid;place-items:center;width:100%;height:100%}
+.business-image-dialog-content img{display:block;width:auto;height:auto;max-width:94vw;max-height:84vh;max-height:84dvh;object-fit:contain}
+.business-image-dialog-close{position:fixed;top:16px;right:16px;display:grid;width:44px;height:44px;place-items:center;border:1px solid rgba(255,255,255,.55);border-radius:50%;background:rgba(12,47,36,.92);color:#fff;font:300 32px/1 'Inter',sans-serif;cursor:pointer}
+.business-image-dialog-close:focus-visible{outline:3px solid var(--clay-soft);outline-offset:3px}
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 @media(max-width:860px){
-  .real-estate-hero{grid-template-columns:1fr;gap:30px}
-  .real-estate-hero-copy h1{font-size:clamp(40px,7vw,58px)}
-  .real-estate-hero-visual{aspect-ratio:1.5}
-  .real-estate-copy{gap:26px}
-  .real-estate-gallery-columns{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .business-hero{grid-template-columns:1fr;gap:30px}
+  .business-hero-copy h1{font-size:clamp(40px,7vw,58px)}
+  .business-hero-visual{aspect-ratio:1.5}
+  .business-copy{gap:26px}
+  .business-gallery-columns{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
 @media(max-width:520px){
-  .division-detail-real-estate{padding-top:38px}
-  .real-estate-hero{gap:26px}
-  .real-estate-hero-copy h1{font-size:clamp(36px,8.5vw,44px);margin:20px 0 14px}
-  .real-estate-hero-visual{aspect-ratio:1.9}
-  .real-estate-copy{grid-template-columns:1fr;gap:18px;margin-block:34px 48px}
-  .real-estate-gallery-columns,.real-estate-gallery-column{gap:12px}
+  .division-detail-business{padding-top:38px}
+  .business-hero{gap:26px}
+  .business-hero-copy h1{font-size:clamp(36px,8.5vw,44px);margin:20px 0 14px}
+  .business-hero-visual{aspect-ratio:1.9}
+  .business-copy{grid-template-columns:1fr;gap:18px;margin-block:34px 48px}
+  .business-gallery-columns,.business-gallery-column{gap:12px}
 }
-@media(prefers-reduced-motion:reduce){.real-estate-gallery-image img{transition:none}}
+@media(prefers-reduced-motion:reduce){.business-gallery-image img{transition:none}}
