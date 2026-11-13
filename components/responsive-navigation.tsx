@@ -105,7 +105,10 @@ export function ResponsiveNavigation({ items }: { items: NavigationItem[] }) {
       <span className="nav-toggle-line line-three" aria-hidden="true" />
     </button>
     <nav ref={navRef} className="site-nav" id={site.header.navigationId} aria-label={site.navigationText.mainAriaLabel}>
-      {items.map((item) => <a className={item.style === "primary" ? "contact-link" : undefined} href={item.href} key={item.href} onClick={closeMenu}>{item.label}</a>)}
+      {items.map((item) => <a className={item.style === "primary" ? "contact-link" : undefined} href={item.href} key={item.href} onClick={closeMenu}>
+        <span>{item.label}</span>
+        {item.style === "primary" && <span className="nav-contact-accent" aria-hidden="true" />}
+      </a>)}
     </nav>
   </>;
 }

@@ -109,3 +109,7 @@ html{scrollbar-width:thin;scrollbar-color:var(--green-soft) var(--paper-dim)}
   .hero-art-gif,.hero-art-media.is-ready .hero-art-gif{opacity:0;transition:none}
   .hero-art-media.is-ready .hero-picture{opacity:1;transition:none}
 }
+
+.site-nav .contact-link{position:relative}
+.nav-contact-accent{position:absolute;right:12px;bottom:4px;left:12px;height:1px;background:var(--clay-soft);transform-origin:left center;pointer-events:none}
+@media(max-width:860px){.site-nav .contact-link .nav-contact-accent{right:10px;left:10px}}
