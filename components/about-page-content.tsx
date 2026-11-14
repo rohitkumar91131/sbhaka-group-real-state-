@@ -33,7 +33,7 @@ const divisions = [
   },
   {
     name: "Shabka Stones",
-    description: "Fine marble, granite, Quartz and more sourced from India’s mines for homes, commercial spaces, and lasting builds.",
+    description: "Fine marble, granite, quartz and more sourced from India’s mines for homes, commercial spaces, and lasting builds.",
     label: "Explore Stones",
     href: "/divisions/stones",
     icon: "/business%20sectioon%20icon/shabka%20stones.png",
