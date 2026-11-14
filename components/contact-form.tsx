@@ -65,7 +65,7 @@ export function ContactForm({ contact, divisions }: { contact: ContactCopy; divi
         </label>
       </div>
       <div className="contact-form-bottom">
-        <p>{contact.privacyNote}</p>
+        <p>{contact.privacyNote} <a href="/privacy-policy">Privacy Policy</a></p>
         <button className="btn-primary" type="submit" disabled={sending}>
           {sending ? contact.submittingLabel : contact.submitLabel}
         </button>
