@@ -2,8 +2,8 @@ import { BusinessGallery, type BusinessGalleryImage } from "./business-gallery";
 
 const gallery: readonly BusinessGalleryImage[] = [
   { src: "/stones/gallery/01-marble-quarry-2.39x1.png", motion: "/stones/gallery/01-quarry-sunrise-drift.gif", motionWidth: 600, motionHeight: 252, alt: "Marble quarry in India at sunrise", width: 1939, height: 811 },
-  { src: "/stones/gallery/02-stone-samples-1x1.png", motion: "/stones/gallery/02-marble-vein-reveal.gif", motionWidth: 440, motionHeight: 440, alt: "Marble and granite samples showing natural variation", width: 1254, height: 1254 },
-  { src: "/stones/gallery/03-marble-granite-yard-4x5.png", motion: "/stones/gallery/03-slab-yard-drift.gif", motionWidth: 360, motionHeight: 450, alt: "Rows of marble and granite slabs in a stone yard", width: 1122, height: 1402 },
+  { src: "/stones/gallery/02-stone-samples-1x1.png", motion: "/stones/gallery/02-marble-vein-reveal.gif", motionWidth: 440, motionHeight: 440, alt: "Marble, granite, Quartz and more samples showing natural variation", width: 1254, height: 1254 },
+  { src: "/stones/gallery/03-marble-granite-yard-4x5.png", motion: "/stones/gallery/03-slab-yard-drift.gif", motionWidth: 360, motionHeight: 450, alt: "Rows of marble, granite, Quartz and more in a stone yard", width: 1122, height: 1402 },
   { src: "/stones/gallery/04-polished-stone-detail-2x3.png", alt: "Polished stone surface with distinctive natural veining", width: 1024, height: 1536 },
   { src: "/stones/gallery/05-marble-interior-16x9.png", alt: "Marble used in a refined contemporary interior", width: 1672, height: 941 },
   { src: "/stones/gallery/06-raw-stone-blocks-3x2.png", alt: "Raw natural stone blocks before cutting and finishing", width: 1536, height: 1024 },

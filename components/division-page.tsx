@@ -43,7 +43,7 @@ const divisionVisuals = {
   stones: {
     desktop: "/stones/hero/desktop.png",
     mobile: "/stones/hero/mobile.png",
-    alt: "Natural marble and granite selected for lasting spaces",
+    alt: "Natural marble, granite, Quartz and more selected for lasting spaces",
     lineBreaks: [4, 7, 9],
   },
 } as const;
