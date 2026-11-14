@@ -31,6 +31,14 @@ const divisions = [
     icon: "/business%20sectioon%20icon/shabka%20agro%20icon.png",
     iconAlt: "",
   },
+  {
+    name: "Shabka Stones",
+    description: "Fine marble and granite sourced from India’s mines for homes, commercial spaces, and lasting builds.",
+    label: "Explore Stones",
+    href: "/divisions/stones",
+    icon: "/business%20sectioon%20icon/shabka%20stones.png",
+    iconAlt: "",
+  },
 ] as const;
 
 const revealSteps = [
@@ -51,7 +59,7 @@ export function AboutPageContent() {
   return <main ref={root} className="about-story">
     <section className="about-story-hero wrap">
       <div className="about-story-hero-copy">
-        <p className="about-story-eyebrow">One Family. Three Ventures. One Standard.</p>
+        <p className="about-story-eyebrow">One Family. Four Ventures. One Standard.</p>
         <h1 className="about-story-title">A Family Business. A Promise of Trust.</h1>
         <p className="about-story-intro">{paragraphs[0]}</p>
       </div>
@@ -76,7 +84,7 @@ export function AboutPageContent() {
     </div>
 
     <section className="about-businesses wrap" aria-labelledby="about-businesses-title">
-      <h2 id="about-businesses-title">One family. Three ways of building.</h2>
+      <h2 id="about-businesses-title">One family. Four ways of building.</h2>
       <div className="about-business-grid">
         {divisions.map((division) => <article className="about-business-card" key={division.href}>
           <Image className="about-business-icon" src={division.icon} alt={division.iconAlt} aria-hidden="true" width={1536} height={1024} sizes="56px" />

@@ -9,6 +9,7 @@ import { useScrollReveal } from "./use-scroll-reveal";
 import { RealEstateGallery } from "./real-estate-gallery";
 import { ImpexGallery } from "./impex-gallery";
 import { AgroGallery } from "./agro-gallery";
+import { StonesGallery } from "./stones-gallery";
 import { imageBlurData } from "./image-blur-data";
 
 const revealSteps = [
@@ -38,6 +39,12 @@ const divisionVisuals = {
     mobile: "/agro%20images/hero/mobile.png",
     alt: "Sunrise over a green cultivated field",
     lineBreaks: [3, 5],
+  },
+  stones: {
+    desktop: "/stones/hero/desktop.png",
+    mobile: "/stones/hero/mobile.png",
+    alt: "Natural marble and granite selected for lasting spaces",
+    lineBreaks: [4, 7, 9],
   },
 } as const;
 
@@ -88,6 +95,7 @@ export function DivisionPage({ division }: { division: Division }) {
       {division.slug === "real-estate" && <RealEstateGallery />}
       {division.slug === "impex" && <ImpexGallery />}
       {division.slug === "agro" && <AgroGallery />}
+      {division.slug === "stones" && <StonesGallery />}
     </> : <div className="wrap division-detail-inner">
       <a className="division-back-link" href={site.navigationText.divisionBackHref}>← {site.navigationText.divisionBackLink}</a>
       <h1><AnimatedWords text={division.heading} /></h1>

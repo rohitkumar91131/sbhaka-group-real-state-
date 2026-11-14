@@ -1,7 +1,7 @@
 {
   "metadata": {
     "title": "Shabka Group",
-    "description": "Real estate, trade, and agriculture, built on trust and carried forward together."
+    "description": "Real estate, trade, agriculture, and natural stone, built on trust and carried forward together."
   },
   "theme": {
     "light": {
@@ -57,6 +57,10 @@
         "href": "/divisions/agro"
       },
       {
+        "label": "Shabka Stones",
+        "href": "/divisions/stones"
+      },
+      {
         "label": "About Us",
         "href": "/about"
       },
@@ -72,7 +76,7 @@
   },
   "hero": {
     "id": "top",
-    "subtitle": "Real estate, trade, and agriculture, built on trust and carried forward together.",
+    "subtitle": "Real estate, trade, agriculture, and natural stone, built on trust and carried forward together.",
     "actions": [
       {
         "label": "Explore Our Businesses",
@@ -108,7 +112,7 @@
     "heading": "A Family Business. A Promise of Trust.",
     "paragraphs": [
       "Shabka Ideal Private Limited is a family-run company, and that is the heart of who we are. In a family business, your name is on everything you do. There is no hiding behind a brand or a department, which is why we hold ourselves to a standard of honesty and care that no contract could require.",
-      "Growing up in a family teaches you what relationships really mean: that trust is built slowly, kept carefully, and never taken for granted. We bring that understanding to every client, partner, and community we work with. Today our group spans real estate and land dealing, import and export across many sectors, and agriculture, and each division carries the same values.",
+      "Growing up in a family teaches you what relationships really mean: that trust is built slowly, kept carefully, and never taken for granted. We bring that understanding to every client, partner, and community we work with. Today our group spans real estate and land dealing, import and export across many sectors, agriculture, and natural stone, and each division carries the same values.",
       "Our name carries our ambition. Ideal is not a claim that we are perfect. It is the standard we keep working toward, in every property, every shipment, and every relationship. We take pride in our proficiency, but we take greater pride in being a company people feel comfortable trusting.",
       "We are rooted in India and reaching further, and we intend to move forward the way we always have: together, with our clients, our partners, and our family."
     ],
@@ -117,7 +121,7 @@
   "divisions": {
     "id": "divisions",
     "heading": "Our Businesses",
-    "description": "Real estate, trade, and agriculture, built on trust and carried forward together.",
+    "description": "Real estate, trade, agriculture, and natural stone, built on trust and carried forward together.",
     "items": [
       {
         "id": "real-estate",
@@ -168,6 +172,23 @@
         "theme": "green-card",
         "icon": "/business%20sectioon%20icon/shabka%20agro%20icon.png",
         "iconAlt": "Shabka Agro icon"
+      },
+      {
+        "id": "stones",
+        "slug": "stones",
+        "name": "Shabka Stones",
+        "heading": "Born of India’s Earth. Chosen for Spaces That Last.",
+        "summary": "Fine marble and granite, sourced directly from the mines of India.",
+        "paragraphs": [
+          "Stone is the oldest language of permanence. Shabka Stones deals in marble and granite drawn from the mines of India, a land whose geology has produced some of the most admired stone in the world. Each slab is chosen for its strength, the character of its grain, and the quality of its finish, so that what arrives at your site is worthy of what you intend to build.",
+          "Our work begins long before delivery. We source with care, inspect with discipline, and supply with consistency, because we understand that stone is rarely a small decision. It sets the tone of a home, the presence of a commercial space, and the standard of everything built around it.",
+          "We work with homeowners, developers, architects, and traders who value material they can depend on. As a family-run company, we know that our name travels with every piece we supply, and we protect it with honest sourcing, transparent dealing, and a commitment to the relationship long after the order is complete. The result is stone you can trust, from a partner you can rely on."
+        ],
+        "linkLabel": "Explore Stones",
+        "href": "/divisions/stones",
+        "theme": "green-card",
+        "icon": "/business%20sectioon%20icon/shabka%20stones.png",
+        "iconAlt": "Shabka Stones icon"
       }
     ]
   },
@@ -179,11 +200,26 @@
     "secondaryEmailAddress": "info@shabkagroup.com",
     "privacyNote": "We’ll use your details only to respond to your enquiry.",
     "fields": {
-      "name": { "label": "Your name", "placeholder": "Enter your name" },
-      "email": { "label": "Email address", "placeholder": "you@example.com" },
-      "phone": { "label": "Phone number", "placeholder": "+91" },
-      "division": { "label": "What can we help with?", "placeholder": "Choose a business area" },
-      "message": { "label": "Your message", "placeholder": "Tell us a little about your enquiry" }
+      "name": {
+        "label": "Your name",
+        "placeholder": "Enter your name"
+      },
+      "email": {
+        "label": "Email address",
+        "placeholder": "you@example.com"
+      },
+      "phone": {
+        "label": "Phone number",
+        "placeholder": "+91"
+      },
+      "division": {
+        "label": "What can we help with?",
+        "placeholder": "Choose a business area"
+      },
+      "message": {
+        "label": "Your message",
+        "placeholder": "Tell us a little about your enquiry"
+      }
     },
     "generalOption": "General enquiry",
     "submitLabel": "Send enquiry",
@@ -227,6 +263,10 @@
           {
             "label": "Shabka Agro",
             "href": "/divisions/agro"
+          },
+          {
+            "label": "Shabka Stones",
+            "href": "/divisions/stones"
           }
         ]
       },

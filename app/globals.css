@@ -9,6 +9,11 @@ footer{background:var(--paper);color:var(--ink);padding:56px 0 28px;border-top:1
 @media(max-width:520px){.wrap{padding-inline:22px}.header-inner{padding:15px 22px}.brand-symbol{width:35px;height:35px}nav{display:grid;grid-template-columns:1fr 1fr;gap:4px}nav a{padding:8px 9px;font-size:12px}.hero{padding:52px 0 58px}.hero-inner{gap:30px}h1{font-size:39px}.hero p.lede{font-size:15px}.hero-ctas{flex-wrap:wrap}.about{padding:58px 0}.about-text p{font-size:16px}.divisions{padding:60px 0 68px}.div-head h2{font-size:29px}.div-card,.div-card.featured{padding:26px 23px;min-height:260px}.footer-inner{grid-template-columns:1fr;gap:24px;padding-bottom:28px}.footer-brand-col{margin-bottom:5px}footer{padding:40px 0 24px}.footer-bottom{font-size:11px}}
 .div-card.navy-card{--card-accent:var(--navy)}
 
+/* Four business divisions share the available desktop width evenly. */
+.div-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+@media(max-width:1100px){.div-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:520px){.div-grid{grid-template-columns:1fr}}
+
 .hero-picture{display:block;width:100%}.hero-picture img{display:block;width:100%;height:auto}.hero-art-media{position:relative;width:100%}.hero-art-gif{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;opacity:0;transition:opacity .28s ease}.hero-art-media.is-ready .hero-art-gif{opacity:1}.hero-art-media.is-ready .hero-picture{opacity:0;transition:opacity .28s ease}
 
 .hero-subtitle{font-size:19px;line-height:1.5;font-weight:600;max-width:48ch;color:var(--ink);margin:0 0 20px}.hero p.hero-description{font-size:15.5px;line-height:1.75;color:var(--ink-soft);max-width:62ch;margin:0 0 14px}.hero-ctas{margin-top:26px}.about-preview .about-text h2{font-family:'Fraunces',serif;font-size:31px;line-height:1.24;font-weight:500;margin:0 0 16px}.about-preview-link{display:inline-block;margin-top:5px;color:var(--green);font-size:14px;font-weight:600;text-decoration:none;border-bottom:1px solid var(--clay-soft);padding-bottom:5px}.division-detail{padding:78px 0 96px;min-height:56vh}.division-detail-inner{max-width:850px}.division-detail h1{max-width:20ch;font-size:clamp(40px,5vw,62px);line-height:1.1;margin:20px 0}.division-back-link{color:var(--green);text-decoration:none;font-size:14px}.division-summary{font-size:19px;font-weight:600;color:var(--ink);max-width:60ch;margin:0 0 30px}.division-copy p{font-size:17px;line-height:1.85;color:var(--ink-soft);max-width:68ch;margin:0 0 22px}.about-page .division-copy p{color:var(--ink)}.about-motto{font-family:'Fraunces',serif;color:var(--green);font-size:19px;font-style:italic;margin-top:36px}
@@ -235,7 +240,7 @@ html{scrollbar-width:thin;scrollbar-color:var(--green-soft) var(--paper-dim)}
 .about-story-copy{max-width:744px;margin:clamp(44px,6vw,76px) auto 0;padding-inline:32px}
 .about-businesses{width:100%;max-width:1580px;padding-inline:clamp(28px,4vw,76px);margin:clamp(54px,7vw,92px) auto 0}
 .about-businesses h2{max-width:24ch;margin:0 0 clamp(24px,3vw,36px);font-family:'Fraunces',serif;font-size:clamp(30px,3.4vw,42px);font-weight:500;line-height:1.15;color:var(--heading-gold)}
-.about-business-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.about-business-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
 .about-business-card{display:flex;min-width:0;flex-direction:column;align-items:flex-start;padding:28px 26px 25px;border:1px solid rgba(134,98,29,.32);background:var(--paper);transition:transform .28s ease,border-color .28s ease}
 .about-business-icon{width:56px;height:42px;object-fit:contain;object-position:left center;transition:transform .28s ease}
 .about-business-card h3{margin:20px 0 8px;color:var(--ink);font-family:'Fraunces',serif;font-size:22px;font-weight:500;line-height:1.2}
@@ -243,6 +248,7 @@ html{scrollbar-width:thin;scrollbar-color:var(--green-soft) var(--paper-dim)}
 .about-business-card a{display:inline-flex;align-items:center;gap:6px;margin-top:22px;padding-bottom:3px;border-bottom:1px solid var(--clay-soft);color:var(--green);font-size:13.5px;font-weight:600;text-decoration:none}
 .about-business-card a:focus-visible{outline:2px solid var(--clay-soft);outline-offset:4px}
 @media(hover:hover) and (pointer:fine){.about-business-card:hover{transform:translateY(-4px);border-color:var(--heading-gold)}.about-business-card:hover .about-business-icon{transform:translateY(-3px)}}
+@media(max-width:1100px){.about-business-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 .about-story-remaining{display:grid;gap:22px;margin-top:clamp(54px,7vw,88px)}
 .about-story-closing{max-width:980px;margin:clamp(70px,10vw,128px) auto 0;text-align:center}
 .about-story-closing-main{max-width:22ch;margin:0 auto 16px;color:var(--heading-gold);font-family:'Fraunces',serif;font-size:clamp(34px,5vw,58px);font-weight:500;line-height:1.12}
