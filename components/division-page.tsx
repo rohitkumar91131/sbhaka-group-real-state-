@@ -10,6 +10,7 @@ import { RealEstateGallery } from "./real-estate-gallery";
 import { ImpexGallery } from "./impex-gallery";
 import { AgroGallery } from "./agro-gallery";
 import { StonesGallery } from "./stones-gallery";
+import { RaimentGallery } from "./raiment-gallery";
 import { imageBlurData } from "./image-blur-data";
 
 const revealSteps = [
@@ -45,6 +46,12 @@ const divisionVisuals = {
     mobile: "/stones/hero/mobile.png",
     alt: "Natural marble, granite, quartz and more selected for lasting spaces",
     lineBreaks: [4, 7, 9],
+  },
+  raiment: {
+    desktop: "/raiment/hero/desktop.png",
+    mobile: "/raiment/hero/mobile.png",
+    alt: "Fine fabrics and tailored garments from Shabka Raiment",
+    lineBreaks: [2, 4],
   },
 } as const;
 
@@ -96,6 +103,7 @@ export function DivisionPage({ division }: { division: Division }) {
       {division.slug === "impex" && <ImpexGallery />}
       {division.slug === "agro" && <AgroGallery />}
       {division.slug === "stones" && <StonesGallery />}
+      {division.slug === "raiment" && <RaimentGallery />}
     </> : <div className="wrap division-detail-inner">
       <a className="division-back-link" href={site.navigationText.divisionBackHref}>← {site.navigationText.divisionBackLink}</a>
       <h1><AnimatedWords text={division.heading} /></h1>

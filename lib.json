@@ -1,7 +1,7 @@
 {
   "metadata": {
     "title": "Shabka Group",
-    "description": "Real estate, trade, agriculture, and natural stone, built on trust and carried forward together."
+    "description": "Real estate, trade, agriculture, natural stone, and fine clothing, built on trust and carried forward together."
   },
   "theme": {
     "light": {
@@ -61,6 +61,10 @@
         "href": "/divisions/stones"
       },
       {
+        "label": "Shabka Raiment",
+        "href": "/divisions/raiment"
+      },
+      {
         "label": "About Us",
         "href": "/about"
       },
@@ -76,7 +80,7 @@
   },
   "hero": {
     "id": "top",
-    "subtitle": "Real estate, trade, agriculture, and natural stone, built on trust and carried forward together.",
+    "subtitle": "Real estate, trade, agriculture, natural stone, and fine clothing, built on trust and carried forward together.",
     "actions": [
       {
         "label": "Explore Our Businesses",
@@ -121,7 +125,7 @@
   "divisions": {
     "id": "divisions",
     "heading": "Our Businesses",
-    "description": "Real estate, trade, agriculture, and natural stone, built on trust and carried forward together.",
+    "description": "Real estate, trade, agriculture, natural stone, and fine clothing, built on trust and carried forward together.",
     "items": [
       {
         "id": "real-estate",
@@ -189,6 +193,25 @@
         "theme": "green-card",
         "icon": "/business%20sectioon%20icon/shabka%20stones.png",
         "iconAlt": "Shabka Stones icon"
+      },
+      {
+        "id": "raiment",
+        "slug": "raiment",
+        "name": "Shabka Raiment",
+        "heading": "Fine Fabrics. Finished with Distinction.",
+        "summary": "The clothing and textile house of Shabka Ideal, from carefully sourced cloth to garments made around you.",
+        "paragraphs": [
+          "Shabka Raiment is the clothing and textile house of Shabka Ideal, founded on a simple belief: that what a person wears should be made with care, from the very first thread. We bring together the finest fabrics from across the world and shape them into garments that reflect quality, character, and lasting style.",
+          "Our fabric collection is sourced from respected mills and weavers around the globe, from fine wools and breathable linens to lustrous silks and premium cottons. Each cloth is selected for its feel, finish, and durability. Whether you are a designer, a boutique, or a customer looking for the perfect length of cloth, our textile range offers the depth and quality to match your vision.",
+          "For those who value a perfect fit, our bespoke tailoring service creates garments made entirely around you. From the first consultation and measurements to the final fitting, every piece is cut and finished by skilled craftsmen who pay close attention to proportion, detail, and comfort. The result is clothing that is truly your own, refined in every seam.",
+          "For those seeking elegance without the wait, our ready-made collection brings the same standards of fabric and finishing to garments that are available at once. Each piece is thoughtfully designed and carefully constructed, offering a polished, dependable wardrobe for every occasion.",
+          "At Shabka Raiment, we do not simply sell clothing. We offer a complete journey from the finest cloth to the finished garment, with the quality and professionalism that the Shabka name stands for."
+        ],
+        "linkLabel": "Explore Raiment",
+        "href": "/divisions/raiment",
+        "theme": "clay",
+        "icon": "/business%20sectioon%20icon/raiment.png",
+        "iconAlt": "Shabka Raiment icon"
       }
     ]
   },
@@ -267,6 +290,10 @@
           {
             "label": "Shabka Stones",
             "href": "/divisions/stones"
+          },
+          {
+            "label": "Shabka Raiment",
+            "href": "/divisions/raiment"
           }
         ]
       },
