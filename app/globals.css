@@ -25,7 +25,7 @@ footer{background:var(--paper);color:var(--ink);padding:56px 0 28px;border-top:1
 @media(prefers-reduced-motion:reduce){.hero-art-gif,.hero-art-media.is-ready .hero-picture{transition:none}}
 @media(max-width:860px){.nav-toggle{background:transparent;border:0;box-shadow:none;transition:opacity .18s ease}.nav-toggle:hover{background:transparent;opacity:.68}.nav-toggle:active{transform:scale(.96)}.nav-toggle-line{width:20px;height:2.5px;background:var(--ink)}}
 
-.div-card .div-icon{min-height:72px;display:flex;align-items:center}.div-card .div-icon img{display:block;width:88px;height:auto;object-fit:contain;object-position:left center}
+.div-card .div-icon{min-height:72px;display:flex;align-items:center}.div-card .div-icon img{display:block;width:auto;height:56px;max-width:88px;object-fit:contain;object-position:left center}
 .site-header,.hero,.about,footer,.footer-inner{border:0}.site-header{box-shadow:none;transition:box-shadow .24s ease}.site-header.is-scrolled{box-shadow:0 8px 22px rgba(11,61,46,.1)}.div-card{border:1px solid rgba(11,61,46,.22);background:transparent}
 
 .hero h1.hero-image-title{width:100%;max-width:none;line-height:1;letter-spacing:0}.hero-image-title img{display:block;width:100%;height:auto}
@@ -255,7 +255,7 @@ html{scrollbar-width:thin;scrollbar-color:var(--green-soft) var(--paper-dim)}
 .about-businesses h2{max-width:24ch;margin:0 0 clamp(24px,3vw,36px);font-family:'Fraunces',serif;font-size:clamp(30px,3.4vw,42px);font-weight:500;line-height:1.15;color:var(--heading-gold)}
 .about-business-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
 .about-business-card{display:flex;min-width:0;flex-direction:column;align-items:flex-start;padding:28px 26px 25px;border:1px solid rgba(134,98,29,.32);background:var(--paper);transition:transform .28s ease,border-color .28s ease}
-.about-business-icon{width:56px;height:42px;object-fit:contain;object-position:left center;transition:transform .28s ease}
+.about-business-icon{width:auto;height:48px;max-width:72px;object-fit:contain;object-position:left center;transition:transform .28s ease}
 .about-business-card h3{margin:20px 0 8px;color:var(--ink);font-family:'Fraunces',serif;font-size:22px;font-weight:500;line-height:1.2}
 .about-business-card p{flex:1;margin:0;color:var(--ink-soft);font-size:14.5px;line-height:1.75}
 .about-business-card a{display:inline-flex;align-items:center;gap:6px;margin-top:22px;padding-bottom:3px;border-bottom:1px solid var(--clay-soft);color:var(--green);font-size:13.5px;font-weight:600;text-decoration:none}
