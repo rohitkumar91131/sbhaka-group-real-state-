@@ -39,6 +39,22 @@ const divisions = [
     icon: "/business%20sectioon%20icon/shabka%20stones.png",
     iconAlt: "",
   },
+  {
+    name: "Shabka Raiment",
+    description: "Fine fabrics, bespoke tailoring, and ready-made garments finished with distinction.",
+    label: "Explore Raiment",
+    href: "/divisions/raiment",
+    icon: "/business%20sectioon%20icon/raiment.png",
+    iconAlt: "",
+  },
+  {
+    name: "Shabka Infrastructure",
+    description: "Civil works, roads, bridges, and public projects built for lasting progress.",
+    label: "Explore Infrastructure",
+    href: "/divisions/infrastructure",
+    icon: "/business%20sectioon%20icon/infrastructure.png",
+    iconAlt: "",
+  },
 ] as const;
 
 const revealSteps = [
@@ -59,7 +75,7 @@ export function AboutPageContent() {
   return <main ref={root} className="about-story">
     <section className="about-story-hero wrap">
       <div className="about-story-hero-copy">
-        <p className="about-story-eyebrow">One Family. Four Ventures. One Standard.</p>
+        <p className="about-story-eyebrow">One Family. Six Ventures. One Standard.</p>
         <h1 className="about-story-title">A Family Business. A Promise of Trust.</h1>
         <p className="about-story-intro">{paragraphs[0]}</p>
       </div>
@@ -84,7 +100,7 @@ export function AboutPageContent() {
     </div>
 
     <section className="about-businesses wrap" aria-labelledby="about-businesses-title">
-      <h2 id="about-businesses-title">One family. Four ways of building.</h2>
+      <h2 id="about-businesses-title">One family. Six ways of building.</h2>
       <div className="about-business-grid">
         {divisions.map((division) => <article className="about-business-card" key={division.href}>
           <Image className="about-business-icon" src={division.icon} alt={division.iconAlt} aria-hidden="true" width={1536} height={1024} sizes="56px" />
