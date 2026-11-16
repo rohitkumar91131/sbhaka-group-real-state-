@@ -11,6 +11,7 @@ import { ImpexGallery } from "./impex-gallery";
 import { AgroGallery } from "./agro-gallery";
 import { StonesGallery } from "./stones-gallery";
 import { RaimentGallery } from "./raiment-gallery";
+import { InfrastructureGallery } from "./infrastructure-gallery";
 import { imageBlurData } from "./image-blur-data";
 
 const revealSteps = [
@@ -51,6 +52,12 @@ const divisionVisuals = {
     desktop: "/raiment/hero/desktop.png",
     mobile: "/raiment/hero/mobile.png",
     alt: "Fine fabrics and tailored garments from Shabka Raiment",
+    lineBreaks: [2, 4],
+  },
+  infrastructure: {
+    desktop: "/infrastructure/hero/desktop.png",
+    mobile: "/infrastructure/hero/mobile.png",
+    alt: "Civil infrastructure built to connect communities and support lasting progress",
     lineBreaks: [2, 4],
   },
 } as const;
@@ -104,6 +111,7 @@ export function DivisionPage({ division }: { division: Division }) {
       {division.slug === "agro" && <AgroGallery />}
       {division.slug === "stones" && <StonesGallery />}
       {division.slug === "raiment" && <RaimentGallery />}
+      {division.slug === "infrastructure" && <InfrastructureGallery />}
     </> : <div className="wrap division-detail-inner">
       <a className="division-back-link" href={site.navigationText.divisionBackHref}>← {site.navigationText.divisionBackLink}</a>
       <h1><AnimatedWords text={division.heading} /></h1>
