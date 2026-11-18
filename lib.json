@@ -49,6 +49,10 @@
         "href": "/divisions/real-estate"
       },
       {
+        "label": "Shabka Infrastructure",
+        "href": "/divisions/infrastructure"
+      },
+      {
         "label": "Shabka Impex",
         "href": "/divisions/impex"
       },
@@ -63,10 +67,6 @@
       {
         "label": "Shabka Raiment",
         "href": "/divisions/raiment"
-      },
-      {
-        "label": "Shabka Infrastructure",
-        "href": "/divisions/infrastructure"
       },
       {
         "label": "About Us",
@@ -149,6 +149,25 @@
         "iconAlt": "Shabka Real Estate icon"
       },
       {
+        "id": "infrastructure",
+        "slug": "infrastructure",
+        "name": "Shabka Infrastructure",
+        "heading": "Building the Foundations of Progress.",
+        "summary": "Civil works and development that connect communities and carry progress forward.",
+        "paragraphs": [
+          "Shabka Infrastructure is the civil works and development arm of Shabka Ideal, committed to building the structures that connect communities and drive economic growth. From roads and bridges to airports and large-scale public works, we approach every project with a clear purpose: to create infrastructure that is strong, dependable, and built to serve generations.",
+          "Our expertise spans the full spectrum of civil construction. We undertake highway and road development, bridges and flyovers, airport and transport facilities, and the construction of commercial and institutional buildings. Each project is guided by sound engineering, careful planning, and strict adherence to national standards of safety and quality.",
+          "We believe that great infrastructure begins long before the first foundation is laid. Our teams work closely with clients, government bodies, and consultants from the earliest stages, offering thoughtful planning, transparent execution, and disciplined project management. Modern equipment, skilled engineers, and quality materials come together to deliver work that is completed on time and built to endure.",
+          "At the heart of our work is a commitment to responsibility, to the people who depend on what we build and to the land on which we build it. We pursue sustainable practices, uphold the highest standards of workmanship, and take pride in leaving behind structures that stand as lasting contributions to the nation’s growth.",
+          "At Shabka Infrastructure, we do not simply construct. We build the roads, bridges, and gateways that carry a nation forward, with the integrity and professionalism that the Shabka name represents."
+        ],
+        "linkLabel": "Explore Infrastructure",
+        "href": "/divisions/infrastructure",
+        "theme": "navy-card",
+        "icon": "/business%20sectioon%20icon/infrastructure.png",
+        "iconAlt": "Shabka Infrastructure icon"
+      },
+      {
         "id": "impex",
         "slug": "impex",
         "name": "Shabka Impex",
@@ -216,25 +235,6 @@
         "theme": "clay",
         "icon": "/business%20sectioon%20icon/raiment.png",
         "iconAlt": "Shabka Raiment icon"
-      },
-      {
-        "id": "infrastructure",
-        "slug": "infrastructure",
-        "name": "Shabka Infrastructure",
-        "heading": "Building the Foundations of Progress.",
-        "summary": "Civil works and development that connect communities and carry progress forward.",
-        "paragraphs": [
-          "Shabka Infrastructure is the civil works and development arm of Shabka Ideal, committed to building the structures that connect communities and drive economic growth. From roads and bridges to airports and large-scale public works, we approach every project with a clear purpose: to create infrastructure that is strong, dependable, and built to serve generations.",
-          "Our expertise spans the full spectrum of civil construction. We undertake highway and road development, bridges and flyovers, airport and transport facilities, and the construction of commercial and institutional buildings. Each project is guided by sound engineering, careful planning, and strict adherence to national standards of safety and quality.",
-          "We believe that great infrastructure begins long before the first foundation is laid. Our teams work closely with clients, government bodies, and consultants from the earliest stages, offering thoughtful planning, transparent execution, and disciplined project management. Modern equipment, skilled engineers, and quality materials come together to deliver work that is completed on time and built to endure.",
-          "At the heart of our work is a commitment to responsibility, to the people who depend on what we build and to the land on which we build it. We pursue sustainable practices, uphold the highest standards of workmanship, and take pride in leaving behind structures that stand as lasting contributions to the nation’s growth.",
-          "At Shabka Infrastructure, we do not simply construct. We build the roads, bridges, and gateways that carry a nation forward, with the integrity and professionalism that the Shabka name represents."
-        ],
-        "linkLabel": "Explore Infrastructure",
-        "href": "/divisions/infrastructure",
-        "theme": "navy-card",
-        "icon": "/business%20sectioon%20icon/infrastructure.png",
-        "iconAlt": "Shabka Infrastructure icon"
       }
     ]
   },
@@ -303,6 +303,10 @@
             "href": "/divisions/real-estate"
           },
           {
+            "label": "Shabka Infrastructure",
+            "href": "/divisions/infrastructure"
+          },
+          {
             "label": "Shabka Impex",
             "href": "/divisions/impex"
           },
@@ -313,10 +317,6 @@
           {
             "label": "Shabka Stones",
             "href": "/divisions/stones"
-          },
-          {
-            "label": "Shabka Infrastructure",
-            "href": "/divisions/infrastructure"
           },
           {
             "label": "Shabka Raiment",

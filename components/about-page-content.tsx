@@ -16,6 +16,14 @@ const divisions = [
     iconAlt: "",
   },
   {
+    name: "Shabka Infrastructure",
+    description: "Civil works, roads, bridges, and public projects built for lasting progress.",
+    label: "Explore Infrastructure",
+    href: "/divisions/infrastructure",
+    icon: "/business%20sectioon%20icon/infrastructure.png",
+    iconAlt: "",
+  },
+  {
     name: "Shabka Impex",
     description: "Sourcing and moving products across sectors, connecting India with wider markets.",
     label: "Explore Impex",
@@ -45,14 +53,6 @@ const divisions = [
     label: "Explore Raiment",
     href: "/divisions/raiment",
     icon: "/business%20sectioon%20icon/raiment.png",
-    iconAlt: "",
-  },
-  {
-    name: "Shabka Infrastructure",
-    description: "Civil works, roads, bridges, and public projects built for lasting progress.",
-    label: "Explore Infrastructure",
-    href: "/divisions/infrastructure",
-    icon: "/business%20sectioon%20icon/infrastructure.png",
     iconAlt: "",
   },
 ] as const;
